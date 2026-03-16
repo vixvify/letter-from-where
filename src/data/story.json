@@ -1,0 +1,9 @@
+{
+  "intro": {
+    "video": "https://res.cloudinary.com/.../intro.mp4",
+    "choices": [
+      { "text": "Open door", "next": "door" },
+      { "text": "Run away", "next": "run" }
+    ]
+  }
+}
