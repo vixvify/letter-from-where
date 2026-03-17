@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌿 Interactive Storytelling for Overcoming Impostor Syndrome
 
-## Getting Started
+A minimal, web-based interactive experience designed to help users explore self-doubt, reflect on their thoughts, and learn to accept their own achievements.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Interactive Storytelling**: Narrative that adapts based on user choices
+- **Reflection Prompts**: Users can select answers or write personal thoughts
+- **Animation & Transitions**: Enhances emotional immersion
+- **Minimal UI**: Clean design to keep focus on the experience
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Goal
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To guide users in understanding and reducing **Impostor Syndrome** through self-reflection and storytelling.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+- Next.js
+- Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+## 📌 Summary
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A calm, immersive space where users can explore their thoughts and build self-acceptance through guided storytelling.
