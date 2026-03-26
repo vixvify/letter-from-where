@@ -1,23 +1,5 @@
 import { SceneUrls } from "./video_url";
-
-type Choice = {
-  A: string;
-  B: string;
-  C: string;
-};
-
-type SceneType = "common" | "choice";
-
-export type Scene = {
-  video: string | undefined;
-  next: string | null;
-  type: SceneType;
-  choice: Choice | null;
-};
-
-type ScenesDataType = {
-  [key: string]: Scene;
-};
+import { ScenesDataType } from "@/core/domain/scene";
 
 const baseScenes: ScenesDataType = Object.fromEntries(
   Array.from({ length: 50 }, (_, i) => {

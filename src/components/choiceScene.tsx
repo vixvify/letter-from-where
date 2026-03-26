@@ -1,4 +1,4 @@
-import { Scene } from "@/data/story";
+import { Scene } from "@/core/domain/scene";
 
 type SceneProps = {
   scene: Scene;

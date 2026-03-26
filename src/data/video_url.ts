@@ -1,56 +1,8 @@
-export const SceneUrls = {
-  scene_1: process.env.NEXT_PUBLIC_URL_SCENE_1,
-  scene_2: process.env.NEXT_PUBLIC_URL_SCENE_2,
-  scene_3: process.env.NEXT_PUBLIC_URL_SCENE_3,
-  scene_4: process.env.NEXT_PUBLIC_URL_SCENE_4,
-  scene_5: process.env.NEXT_PUBLIC_URL_SCENE_5,
-  scene_6: process.env.NEXT_PUBLIC_URL_SCENE_6,
-  scene_7: process.env.NEXT_PUBLIC_URL_SCENE_7,
-  scene_8: process.env.NEXT_PUBLIC_URL_SCENE_8,
-  scene_9: process.env.NEXT_PUBLIC_URL_SCENE_9,
-  scene_10: process.env.NEXT_PUBLIC_URL_SCENE_10,
+type SceneId = `scene_${number}`;
 
-  scene_11: process.env.NEXT_PUBLIC_URL_SCENE_11,
-  scene_12: process.env.NEXT_PUBLIC_URL_SCENE_12,
-  scene_13: process.env.NEXT_PUBLIC_URL_SCENE_13,
-  scene_14: process.env.NEXT_PUBLIC_URL_SCENE_14,
-  scene_15: process.env.NEXT_PUBLIC_URL_SCENE_15,
-  scene_16: process.env.NEXT_PUBLIC_URL_SCENE_16,
-  scene_17: process.env.NEXT_PUBLIC_URL_SCENE_17,
-  scene_18: process.env.NEXT_PUBLIC_URL_SCENE_18,
-  scene_19: process.env.NEXT_PUBLIC_URL_SCENE_19,
-  scene_20: process.env.NEXT_PUBLIC_URL_SCENE_20,
-
-  scene_21: process.env.NEXT_PUBLIC_URL_SCENE_21,
-  scene_22: process.env.NEXT_PUBLIC_URL_SCENE_22,
-  scene_23: process.env.NEXT_PUBLIC_URL_SCENE_23,
-  scene_24: process.env.NEXT_PUBLIC_URL_SCENE_24,
-  scene_25: process.env.NEXT_PUBLIC_URL_SCENE_25,
-  scene_26: process.env.NEXT_PUBLIC_URL_SCENE_26,
-  scene_27: process.env.NEXT_PUBLIC_URL_SCENE_27,
-  scene_28: process.env.NEXT_PUBLIC_URL_SCENE_28,
-  scene_29: process.env.NEXT_PUBLIC_URL_SCENE_29,
-  scene_30: process.env.NEXT_PUBLIC_URL_SCENE_30,
-
-  scene_31: process.env.NEXT_PUBLIC_URL_SCENE_31,
-  scene_32: process.env.NEXT_PUBLIC_URL_SCENE_32,
-  scene_33: process.env.NEXT_PUBLIC_URL_SCENE_33,
-  scene_34: process.env.NEXT_PUBLIC_URL_SCENE_34,
-  scene_35: process.env.NEXT_PUBLIC_URL_SCENE_35,
-  scene_36: process.env.NEXT_PUBLIC_URL_SCENE_36,
-  scene_37: process.env.NEXT_PUBLIC_URL_SCENE_37,
-  scene_38: process.env.NEXT_PUBLIC_URL_SCENE_38,
-  scene_39: process.env.NEXT_PUBLIC_URL_SCENE_39,
-  scene_40: process.env.NEXT_PUBLIC_URL_SCENE_40,
-
-  scene_41: process.env.NEXT_PUBLIC_URL_SCENE_41,
-  scene_42: process.env.NEXT_PUBLIC_URL_SCENE_42,
-  scene_43: process.env.NEXT_PUBLIC_URL_SCENE_43,
-  scene_44: process.env.NEXT_PUBLIC_URL_SCENE_44,
-  scene_45: process.env.NEXT_PUBLIC_URL_SCENE_45,
-  scene_46: process.env.NEXT_PUBLIC_URL_SCENE_46,
-  scene_47: process.env.NEXT_PUBLIC_URL_SCENE_47,
-  scene_48: process.env.NEXT_PUBLIC_URL_SCENE_48,
-  scene_49: process.env.NEXT_PUBLIC_URL_SCENE_49,
-  scene_50: process.env.NEXT_PUBLIC_URL_SCENE_50,
-};
+export const SceneUrls = Object.fromEntries(
+  Array.from({ length: 50 }, (_, i) => {
+    const id = i + 1;
+    return [`scene_${id}`, process.env[`NEXT_PUBLIC_URL_SCENE_${id}`]];
+  }),
+) as Record<SceneId, string | undefined>;

@@ -1,4 +1,4 @@
-import { Scene } from "@/data/story";
+import { Scene } from "@/core/domain/scene";
 import { useRouter } from "next/navigation";
 
 type SceneProps = {
