@@ -21,6 +21,7 @@ export type TransitionType =
 
 export type Scene = {
   src: string | undefined;
+  text: string;
   next: string | null;
   type: SceneType;
   choice: Choice | null;

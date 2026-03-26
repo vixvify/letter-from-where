@@ -12,6 +12,7 @@ type SceneProps = {
 export function CommonScene({ scene, goTo }: SceneProps) {
   return (
     <div
+      className="relative w-full h-screen"
       onClick={() => {
         if (scene.next) {
           goTo(scene.next, scene.transition ?? "cut");
@@ -27,6 +28,9 @@ export function CommonScene({ scene, goTo }: SceneProps) {
           className="w-full h-screen"
         ></Image>
       )}
+      <h1 className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold">
+        {scene.text}
+      </h1>
     </div>
   );
 }
