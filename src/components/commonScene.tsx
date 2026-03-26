@@ -10,7 +10,6 @@ export function CommonScene({ scene }: SceneProps) {
   return (
     <div onClick={() => router.replace(`/scene/${scene.next}`)}>
       <video src={scene.video} autoPlay />
-      {scene.next && <button>Next</button>}
     </div>
   );
 }
