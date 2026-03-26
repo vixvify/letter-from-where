@@ -1,3 +1,5 @@
+"use client";
+
 import { Scene } from "@/core/domain/scene";
 
 type SceneProps = {

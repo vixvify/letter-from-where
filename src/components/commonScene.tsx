@@ -1,3 +1,5 @@
+"use client";
+
 import { Scene } from "@/core/domain/scene";
 import { useRouter } from "next/navigation";
 
