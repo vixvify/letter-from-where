@@ -5,7 +5,6 @@ import { CommonScene } from "@/components/commonScene";
 import { ChoiceScene } from "@/components/choiceScene";
 import InputScene from "@/components/inputScene";
 import { Scene } from "@/core/domain/scene";
-import TransitionOverlay from "@/components/transition_overlay";
 
 const SceneComponentMap = {
   common: CommonScene,
@@ -18,15 +17,13 @@ type SceneProps = {
 };
 
 export default function SceneClient({ scene }: SceneProps) {
-  const { transition, goTo } = useSceneTransition();
+  const { goTo } = useSceneTransition();
 
   const Component = SceneComponentMap[scene.type];
 
   return (
     <>
       <Component scene={scene} goTo={goTo} />
-
-      {transition && <TransitionOverlay type={transition} />}
     </>
   );
 }

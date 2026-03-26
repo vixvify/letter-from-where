@@ -9,7 +9,7 @@ const commonScenes: ScenesDataType = Object.fromEntries(
     return [
       key,
       {
-        video: SceneUrls[key as keyof typeof SceneUrls],
+        src: SceneUrls[key as keyof typeof SceneUrls],
         next: id < 50 ? `scene_${id + 1}` : null,
         type: "common",
         choice: null,
@@ -21,7 +21,7 @@ const commonScenes: ScenesDataType = Object.fromEntries(
 
 const customScenes: ScenesDataType = {
   scene_10: {
-    video: SceneUrls.scene_10,
+    src: SceneUrls.scene_10,
     next: null,
     type: "choice",
     choice: {

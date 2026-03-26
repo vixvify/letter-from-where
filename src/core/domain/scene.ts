@@ -12,10 +12,15 @@ export type choiceNext = {
 
 export type SceneType = "common" | "choice" | "input";
 
-export type TransitionType = "white-fade" | "black-fade" | "blink" | "cut";
+export type TransitionType =
+  | "white-fade"
+  | "black-fade"
+  | "blink"
+  | "cut"
+  | "fade";
 
 export type Scene = {
-  video: string | undefined;
+  src: string | undefined;
   next: string | null;
   type: SceneType;
   choice: Choice | null;

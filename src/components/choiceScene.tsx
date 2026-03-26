@@ -12,7 +12,7 @@ export function ChoiceScene({ scene, goTo }: SceneProps) {
   if (scene.choice) {
     return (
       <div>
-        <video src={scene.video} autoPlay />
+        <video src={scene.src} autoPlay />
 
         <button
           onClick={() => {

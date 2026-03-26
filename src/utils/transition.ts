@@ -1,12 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { TransitionType } from "@/core/domain/scene";
+import { useTransitionStore } from "@/store/transition";
 
 export function useSceneTransition() {
   const router = useRouter();
-  const [transition, setTransition] = useState<TransitionType | null>(null);
+  const setTransition = useTransitionStore((s) => s.setTransition);
+  const DURATION = 1000;
 
   const goTo = (next: string, type: TransitionType) => {
     if (type === "cut") {
@@ -18,8 +19,11 @@ export function useSceneTransition() {
 
     setTimeout(() => {
       router.replace(`/scenes/${next}`);
-    }, 300);
+    }, DURATION / 2);
+    setTimeout(() => {
+      setTransition(null);
+    }, DURATION);
   };
 
-  return { transition, goTo };
+  return { goTo };
 }

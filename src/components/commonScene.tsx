@@ -2,6 +2,7 @@
 
 import { Scene } from "@/core/domain/scene";
 import { TransitionType } from "@/core/domain/scene";
+import Image from "next/image";
 
 type SceneProps = {
   scene: Scene;
@@ -17,7 +18,15 @@ export function CommonScene({ scene, goTo }: SceneProps) {
         }
       }}
     >
-      <video src={scene.video} autoPlay />
+      {scene.src && (
+        <Image
+          src={scene.src}
+          alt="bg"
+          width={1000}
+          height={1920}
+          className="w-full h-screen"
+        ></Image>
+      )}
     </div>
   );
 }
