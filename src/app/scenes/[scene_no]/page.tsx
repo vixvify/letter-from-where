@@ -4,7 +4,7 @@ import { ChoiceScene } from "@/components/choiceScene";
 
 type PageProps = {
   params: {
-    id: string;
+    scene_no: string;
   };
 };
 
@@ -14,7 +14,7 @@ const SceneComponentMap = {
 };
 
 export default function ScenePage({ params }: PageProps) {
-  const scene = ScenesData[`scene_${params.id}`];
+  const scene = ScenesData[params.scene_no];
 
   const Component = SceneComponentMap[scene.type];
 

@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 export default function Home() {
-  return <div className=""></div>;
+  redirect("/scenes/scene_1");
 }
