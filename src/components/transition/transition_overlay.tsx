@@ -7,27 +7,20 @@ export default function TransitionOverlay({
 }) {
   if (!type) return null;
 
-  const base = "fixed inset-0 z-50 pointer-events-none";
+  const base =
+    "fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 ease-in-out";
 
   if (type === "black-fade") {
-    return (
-      <div
-        className={`${base} bg-black animate-[opacity_0.3s_ease_forwards]`}
-      />
-    );
+    return <div className={`${base} bg-black opacity-100`} />;
   }
 
   if (type === "white-fade") {
-    return (
-      <div
-        className={`${base} bg-white animate-[opacity_0.3s_ease_forwards]`}
-      />
-    );
+    return <div className={`${base} bg-white opacity-100`} />;
   }
 
   if (type === "blink") {
     return (
-      <div className="fixed inset-0 bg-black z-50 pointer-events-none animate-[opacity_0.1s_linear_0s_2]" />
+      <div className="fixed inset-0 bg-black z-50 pointer-events-none animate-blink-twice" />
     );
   }
 
