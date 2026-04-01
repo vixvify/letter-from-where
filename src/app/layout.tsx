@@ -3,7 +3,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { useTransitionStore } from "@/store/transition";
-import TransitionOverlay from "@/components/transition_overlay";
+import TransitionOverlay from "@/components/transition/Transition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

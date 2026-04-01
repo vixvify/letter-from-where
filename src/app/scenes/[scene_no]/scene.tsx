@@ -1,9 +1,9 @@
 "use client";
 
-import { useSceneTransition } from "@/utils/transition";
-import { CommonScene } from "@/components/commonScene";
-import { ChoiceScene } from "@/components/choiceScene";
-import { InputScene } from "@/components/inputScene";
+import { useSceneTransition } from "@/hooks/transition";
+import { CommonScene } from "@/components/scene/Common";
+import { ChoiceScene } from "@/components/scene/Choice";
+import { InputScene } from "@/components/scene/Input";
 import { Scene } from "@/core/domain/scene";
 
 const SceneComponentMap = {
