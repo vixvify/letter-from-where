@@ -2,7 +2,7 @@
 
 import { useSceneTransition } from "@/hooks/transition";
 import { Scene } from "@/core/domain/scene";
-import { SceneComponentMap } from "@/core/domain/scene";
+import { SceneComponentMap } from "@/core/constants/scene";
 
 type SceneProps = {
   scene: Scene;

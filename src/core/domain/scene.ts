@@ -1,6 +1,13 @@
-import { CommonScene } from "@/components/scene/Common";
-import { ChoiceScene } from "@/components/scene/Choice";
-import { InputScene } from "@/components/scene/Input";
+export type SceneType = "common" | "choice" | "input";
+
+export type TransitionType =
+  | "white-fade"
+  | "black-fade"
+  | "blink"
+  | "cut"
+  | "fade";
+
+export type Format = "video" | "image";
 
 export type Choice = {
   A: string;
@@ -13,17 +20,6 @@ export type choiceNext = {
   nextB: string;
   nextC: string;
 };
-
-export type SceneType = "common" | "choice" | "input";
-
-export type TransitionType =
-  | "white-fade"
-  | "black-fade"
-  | "blink"
-  | "cut"
-  | "fade";
-
-export type Format = "video" | "image";
 
 export type Scene = {
   src: string | undefined;
@@ -45,8 +41,4 @@ export type SceneProps = {
   goTo: (next: string, type: TransitionType) => void;
 };
 
-export const SceneComponentMap = {
-  common: CommonScene,
-  choice: ChoiceScene,
-  input: InputScene,
-};
+
