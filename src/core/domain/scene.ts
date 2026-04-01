@@ -1,3 +1,7 @@
+import { CommonScene } from "@/components/scene/Common";
+import { ChoiceScene } from "@/components/scene/Choice";
+import { InputScene } from "@/components/scene/Input";
+
 export type Choice = {
   A: string;
   B: string;
@@ -39,4 +43,10 @@ export type ScenesDataType = {
 export type SceneProps = {
   scene: Scene;
   goTo: (next: string, type: TransitionType) => void;
+};
+
+export const SceneComponentMap = {
+  common: CommonScene,
+  choice: ChoiceScene,
+  input: InputScene,
 };
