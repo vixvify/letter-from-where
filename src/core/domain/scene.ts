@@ -1,3 +1,14 @@
+export type SceneType = "common" | "choice" | "input";
+
+export type TransitionType =
+  | "white-fade"
+  | "black-fade"
+  | "blink"
+  | "cut"
+  | "fade";
+
+export type Format = "video" | "image";
+
 export type Choice = {
   A: string;
   B: string;
@@ -9,17 +20,6 @@ export type choiceNext = {
   nextB: string;
   nextC: string;
 };
-
-export type SceneType = "common" | "choice" | "input";
-
-export type TransitionType =
-  | "white-fade"
-  | "black-fade"
-  | "blink"
-  | "cut"
-  | "fade";
-
-export type Format = "video" | "image";
 
 export type Scene = {
   src: string | undefined;
@@ -40,3 +40,5 @@ export type SceneProps = {
   scene: Scene;
   goTo: (next: string, type: TransitionType) => void;
 };
+
+
