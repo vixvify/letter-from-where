@@ -34,49 +34,31 @@
 
 @layer utilities {
   @keyframes fade-in {
-    0% {
+    from {
       opacity: 0;
     }
-    25% {
-      opacity: 0.25;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    75% {
-      opacity: 0.75;
-    }
-    100% {
+    to {
       opacity: 1;
     }
   }
 
   @keyframes fade-out {
-    0% {
+    from {
       opacity: 1;
     }
-    25% {
-      opacity: 0.75;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    75% {
-      opacity: 0.25;
-    }
-    100% {
+    to {
       opacity: 0;
     }
   }
 
   .animate-fade-in {
-    animation: fade-in 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    animation: fade-in 1s ease-in-out forwards;
   }
 
   .animate-fade-out {
-    animation: fade-out 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    animation: fade-out 1s ease-in-out forwards;
   }
   .animate-fade-in-common {
-    animation: fade-in 2s ease-in-out forwards;
+    animation: fade-in 1s ease-in-out forwards;
   }
 }

@@ -2,6 +2,7 @@ import { SceneUrls } from "./video-url";
 import { ScenesDataType } from "@/core/domain/scene";
 import { SceneText } from "@/core/constants/sceneText";
 import { CustomScenes } from "./custom-scene";
+import { VariantScenes } from "./variant-scene";
 
 const CommonScenes: ScenesDataType = Object.fromEntries(
   Array.from({ length: 50 }, (_, i) => {
@@ -25,4 +26,5 @@ const CommonScenes: ScenesDataType = Object.fromEntries(
 export const ScenesData: ScenesDataType = {
   ...CommonScenes,
   ...CustomScenes,
+  ...VariantScenes,
 };
