@@ -1,6 +1,7 @@
 import { SceneProps } from "@/core/domain/scene";
 import { useForm } from "react-hook-form";
 import { IScene3 } from "@/core/domain/data";
+import { useFormStore } from "@/store/data";
 
 export default function Custom2({ scene, goTo }: SceneProps) {
   const {
@@ -12,6 +13,8 @@ export default function Custom2({ scene, goTo }: SceneProps) {
   });
 
   const onSubmit = (data: IScene3) => {
+    const { setFields } = useFormStore.getState();
+    setFields(data);
     if (scene.next) {
       goTo(scene.next, scene.transition ?? "cut");
     }

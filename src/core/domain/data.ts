@@ -5,10 +5,12 @@ export interface IData {
 }
 
 export interface ICreateData {
+  name: string;
+  age: number;
   scene_1: string;
 }
 
 export interface IScene3 {
   name: string;
-  age: string;
+  age: number;
 }
