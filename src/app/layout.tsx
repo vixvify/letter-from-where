@@ -17,9 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${sarabun.className} bg-black antialiased flex justify-center`}
+        className={` ${sarabun.className} bg-black antialiased flex justify-center items-center min-h-dvh overflow-hidden`}
       >
-        <div className="w-full max-w-120 min-h-screen bg-white relative overflow-hidden">
+        <div className="relative w-full overflow-hidden bg-white max-w-120 min-h-dvh">
           {children}
           <TransitionOverlay />
         </div>
