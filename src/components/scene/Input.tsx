@@ -2,6 +2,7 @@
 
 import { SceneProps } from "@/core/domain/scene";
 import Image from "next/image";
+import { handleNext } from "@/utils/scene";
 
 export function InputScene({ scene, goTo }: SceneProps) {
   if (scene.choice && scene.format === "image") {
@@ -9,9 +10,11 @@ export function InputScene({ scene, goTo }: SceneProps) {
       <div
         className="relative w-full h-screen"
         onClick={() => {
-          if (scene.next) {
-            goTo(scene.next, scene.transition ?? "cut");
-          }
+          handleNext({
+            next: scene.next,
+            transition: scene.transition,
+            goTo,
+          });
         }}
       >
         {scene.src && (
@@ -23,7 +26,7 @@ export function InputScene({ scene, goTo }: SceneProps) {
             className="w-full h-screen"
           ></Image>
         )}
-        <h1 className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold">
+        <h1 className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-white">
           {scene.text}
         </h1>
       </div>
@@ -33,9 +36,11 @@ export function InputScene({ scene, goTo }: SceneProps) {
       <div
         className="relative w-full h-screen"
         onClick={() => {
-          if (scene.next) {
-            goTo(scene.next, scene.transition ?? "cut");
-          }
+          handleNext({
+            next: scene.next,
+            transition: scene.transition,
+            goTo,
+          });
         }}
       >
         {scene.src && (
@@ -46,7 +51,7 @@ export function InputScene({ scene, goTo }: SceneProps) {
             className="w-full h-screen"
           ></video>
         )}
-        <h1 className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold">
+        <h1 className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-white">
           {scene.text}
         </h1>
       </div>

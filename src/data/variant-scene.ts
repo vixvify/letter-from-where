@@ -1,6 +1,6 @@
 import { ScenesDataType } from "@/core/domain/scene";
 import { SceneUrls } from "./video-url";
-import { SceneText } from "@/core/constants/sceneText";
+import { SceneText } from "@/core/constants/scene-text";
 
 export const VariantScenes: ScenesDataType = {
   scene_4: {
