@@ -30,7 +30,7 @@ export function CommonScene({ scene, goTo }: SceneProps) {
             className="w-full h-screen"
           ></Image>
         )}
-        <h1 className="absolute inset-0 z-10 flex items-center justify-center text-[25px] font-bold text-white">
+        <h1 className="absolute inset-0 z-10 flex items-center justify-center text-[12px] font-bold text-white">
           {scene.text}
         </h1>
       </div>
