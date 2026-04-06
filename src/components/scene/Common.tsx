@@ -3,6 +3,7 @@
 import { SceneProps } from "@/core/domain/scene";
 import Image from "next/image";
 import CommonOverlay from "../overlay/Common";
+import { handleNext } from "@/utils/scene";
 
 export function CommonScene({ scene, goTo }: SceneProps) {
   if (!scene.src && scene.text) {
@@ -13,9 +14,11 @@ export function CommonScene({ scene, goTo }: SceneProps) {
       <div
         className="relative w-full h-screen"
         onClick={() => {
-          if (scene.next) {
-            goTo(scene.next, scene.transition ?? "cut");
-          }
+          handleNext({
+            next: scene.next,
+            transition: scene.transition,
+            goTo,
+          });
         }}
       >
         {scene.src && (
@@ -37,9 +40,11 @@ export function CommonScene({ scene, goTo }: SceneProps) {
       <div
         className="relative w-full h-screen"
         onClick={() => {
-          if (scene.next) {
-            goTo(scene.next, scene.transition ?? "cut");
-          }
+          handleNext({
+            next: scene.next,
+            transition: scene.transition,
+            goTo,
+          });
         }}
       >
         {scene.src && (

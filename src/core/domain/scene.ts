@@ -9,6 +9,7 @@ export type Format = "video" | "image";
 export type Scene = {
   src?: string;
   text?: string;
+  textColor?: string;
   next: string | null;
   type: SceneType;
   format?: Format;

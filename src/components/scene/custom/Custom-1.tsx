@@ -1,4 +1,6 @@
 import { SceneProps } from "@/core/domain/scene";
+import Button from "@/components/Button";
+import { handleNext } from "@/utils/scene";
 
 export default function Custom1({ scene, goTo }: SceneProps) {
   return (
@@ -31,16 +33,19 @@ export default function Custom1({ scene, goTo }: SceneProps) {
           <p>และควรดูแลจิตใจของตนเอง อย่างเหมาะสม</p>
         </div>
 
-        <button
-          className="mt-10 text-gray-900 underline transition cursor-pointer hover:text-black"
+        <Button
+          variant="underline"
+          className="mt-10"
           onClick={() => {
-            if (scene.next) {
-              goTo(scene.next, scene.transition ?? "cut");
-            }
+            handleNext({
+              next: scene.next,
+              transition: scene.transition,
+              goTo,
+            });
           }}
         >
           คลิกเพื่อเริ่ม
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { SceneUrls } from "./video-url";
 import { ScenesDataType } from "@/core/domain/scene";
-import { SceneText } from "@/core/constants/sceneText";
+import { SceneText } from "@/core/constants/scene-text";
 import { CustomScenes } from "./custom-scene";
 import { VariantScenes } from "./variant-scene";
 

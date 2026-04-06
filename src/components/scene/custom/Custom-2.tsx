@@ -2,6 +2,9 @@ import { SceneProps } from "@/core/domain/scene";
 import { useForm } from "react-hook-form";
 import { IScene3 } from "@/core/domain/data";
 import { useFormStore } from "@/store/data";
+import Button from "@/components/Button";
+import TextField from "@/components/TextField";
+import { handleNext } from "@/utils/scene";
 
 export default function Custom2({ scene, goTo }: SceneProps) {
   const {
@@ -15,9 +18,11 @@ export default function Custom2({ scene, goTo }: SceneProps) {
   const onSubmit = (data: IScene3) => {
     const { setFields } = useFormStore.getState();
     setFields(data);
-    if (scene.next) {
-      goTo(scene.next, scene.transition ?? "cut");
-    }
+    handleNext({
+      next: scene.next,
+      transition: scene.transition,
+      goTo,
+    });
   };
 
   return (
@@ -27,40 +32,31 @@ export default function Custom2({ scene, goTo }: SceneProps) {
         className="flex flex-col items-center gap-8"
       >
         <div className="flex flex-col items-center gap-2">
-          <label className="font-semibold text-black">ชื่อ</label>
-          <input
-            type="text"
+          <TextField
+            label="ชื่อ"
             placeholder="name ..."
-            className="w-64 px-4 py-3 text-gray-600 placeholder-gray-500 bg-gray-300 rounded-md outline-none"
-            {...register("name", { required: true })}
+            register={register("name", { required: "กรุณากรอกชื่อ" })}
           />
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <label className="font-semibold text-black">อายุ</label>
-          <input
+          <TextField
+            label="อายุ"
             type="number"
             placeholder="age ..."
-            className="w-64 px-4 py-3 text-gray-600 placeholder-gray-500 bg-gray-300 rounded-md outline-none"
-            {...register("age", {
-              required: true,
-              min: 1,
+            register={register("age", {
+              required: "กรุณากรอกอายุ",
+              min: {
+                value: 1,
+                message: "อายุต้องมากกว่า 0",
+              },
             })}
           />
         </div>
 
-        <button
-          type="submit"
-          disabled={!isValid}
-          className={`px-8 py-2 mt-4 font-medium rounded-md transition
-            ${
-              isValid
-                ? "bg-gray-300 hover:bg-gray-400 text-black cursor-pointer"
-                : "bg-gray-300 hover:bg-gray-300 text-gray-500 cursor-not-allowed"
-            }`}
-        >
+        <Button type="submit" isValid={isValid}>
           ยืนยัน
-        </button>
+        </Button>
       </form>
     </div>
   );
