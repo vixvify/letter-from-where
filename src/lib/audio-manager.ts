@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useAudioStore } from "@/store/audio";
+import { AudioUrls } from "@/data/audio-url";
 
 export default function RouteSoundManager() {
   const pathname = usePathname();
@@ -14,27 +15,13 @@ export default function RouteSoundManager() {
   useEffect(() => {
     if (!enabled) return;
 
-    if (pathname.startsWith("/game")) {
-      play("bgm", "/sounds/battle.mp3", {
-        fadeIn: 1500,
-        loop: true,
-      });
-
-      play("ambient", "/sounds/wind.mp3", {
-        fadeIn: 2000,
-        loop: true,
-      });
-
-      return;
-    }
-
-    if (pathname.startsWith("/home")) {
-      play("bgm", "/sounds/home.mp3", {
+    if (pathname.startsWith("/scenes/scene_10") && AudioUrls["rain"]) {
+      play("ambient", AudioUrls["rain"], {
         fadeIn: 1000,
         loop: true,
       });
 
-      stop("ambient", { fadeOut: 800 });
+      stop("bgm", { fadeOut: 800 });
 
       return;
     }

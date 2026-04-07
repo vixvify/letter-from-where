@@ -2,6 +2,7 @@ import { SceneProps } from "@/core/domain/scene";
 import Button from "@/components/Button";
 import { handleNext } from "@/utils/scene";
 import { useAudioStore } from "@/store/audio";
+import { AudioUrls } from "@/data/audio-url";
 
 export default function Custom1({ scene, goTo }: SceneProps) {
   const play = useAudioStore((s) => s.play);
@@ -9,7 +10,13 @@ export default function Custom1({ scene, goTo }: SceneProps) {
 
   const handleEnter = () => {
     enable();
-    play("bgm", "/sounds/home.mp3", { fadeIn: 1000 });
+    if (AudioUrls["scene_1"] && AudioUrls["rain"]) {
+      play("bgm", AudioUrls["scene_1"], {
+        fadeIn: 1500,
+        loop: true,
+        volume: 0.5,
+      });
+    }
     handleNext({
       next: scene.next,
       transition: scene.transition,
