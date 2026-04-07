@@ -1,8 +1,29 @@
 import { SceneProps } from "@/core/domain/scene";
 import Button from "@/components/Button";
 import { handleNext } from "@/utils/scene";
+import { useAudioStore } from "@/store/audio";
+import { AudioUrls } from "@/data/audio-url";
 
 export default function Custom1({ scene, goTo }: SceneProps) {
+  const play = useAudioStore((s) => s.play);
+  const enable = useAudioStore((s) => s.enable);
+
+  const handleEnter = () => {
+    enable();
+    if (AudioUrls["scene_1"] && AudioUrls["rain"]) {
+      play("bgm", AudioUrls["scene_1"], {
+        fadeIn: 1500,
+        loop: true,
+        volume: 0.5,
+      });
+    }
+    handleNext({
+      next: scene.next,
+      transition: scene.transition,
+      goTo,
+    });
+  };
+
   return (
     <div className="flex items-center justify-center w-full h-screen">
       <div className="text-center animate-fade-in-common">
@@ -31,17 +52,7 @@ export default function Custom1({ scene, goTo }: SceneProps) {
           <p className="m-0">และควรดูแลจิตใจของตนเอง อย่างเหมาะสม</p>
         </div>
 
-        <Button
-          variant="underline"
-          className="mt-10"
-          onClick={() => {
-            handleNext({
-              next: scene.next,
-              transition: scene.transition,
-              goTo,
-            });
-          }}
-        >
+        <Button variant="underline" className="mt-10" onClick={handleEnter}>
           คลิกเพื่อเริ่ม
         </Button>
       </div>
