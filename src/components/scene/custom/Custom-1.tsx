@@ -1,8 +1,22 @@
 import { SceneProps } from "@/core/domain/scene";
 import Button from "@/components/Button";
 import { handleNext } from "@/utils/scene";
+import { useAudioStore } from "@/store/audio";
 
 export default function Custom1({ scene, goTo }: SceneProps) {
+  const toggle = useAudioStore((s) => s.toggle);
+  const play = useAudioStore((s) => s.play);
+
+  const handleEnter = () => {
+    toggle();
+    play("/sounds/home.mp3");
+    handleNext({
+      next: scene.next,
+      transition: scene.transition,
+      goTo,
+    });
+  };
+
   return (
     <div className="flex items-center justify-center w-full h-screen">
       <div className="text-center animate-fade-in-common">
@@ -31,17 +45,7 @@ export default function Custom1({ scene, goTo }: SceneProps) {
           <p className="m-0">และควรดูแลจิตใจของตนเอง อย่างเหมาะสม</p>
         </div>
 
-        <Button
-          variant="underline"
-          className="mt-10"
-          onClick={() => {
-            handleNext({
-              next: scene.next,
-              transition: scene.transition,
-              goTo,
-            });
-          }}
-        >
+        <Button variant="underline" className="mt-10" onClick={handleEnter}>
           คลิกเพื่อเริ่ม
         </Button>
       </div>
