@@ -6,6 +6,7 @@ import { useAudioStore } from "@/store/audio";
 
 export default function RouteSoundManager() {
   const pathname = usePathname();
+
   const play = useAudioStore((s) => s.play);
   const stop = useAudioStore((s) => s.stop);
   const enabled = useAudioStore((s) => s.enabled);
@@ -14,13 +15,30 @@ export default function RouteSoundManager() {
     if (!enabled) return;
 
     if (pathname.startsWith("/game")) {
-      play("/sounds/game.mp3");
-    } else if (pathname.startsWith("/home")) {
-      play("/sounds/home.mp3");
-    } else {
-      stop();
+      play("bgm", "/sounds/battle.mp3", {
+        fadeIn: 1500,
+        loop: true,
+      });
+
+      play("ambient", "/sounds/wind.mp3", {
+        fadeIn: 2000,
+        loop: true,
+      });
+
+      return;
     }
-  }, [play, stop, pathname, enabled]);
+
+    if (pathname.startsWith("/home")) {
+      play("bgm", "/sounds/home.mp3", {
+        fadeIn: 1000,
+        loop: true,
+      });
+
+      stop("ambient", { fadeOut: 800 });
+
+      return;
+    }
+  }, [pathname, enabled, play, stop]);
 
   return null;
 }

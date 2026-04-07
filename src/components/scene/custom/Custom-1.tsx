@@ -4,12 +4,12 @@ import { handleNext } from "@/utils/scene";
 import { useAudioStore } from "@/store/audio";
 
 export default function Custom1({ scene, goTo }: SceneProps) {
-  const toggle = useAudioStore((s) => s.toggle);
   const play = useAudioStore((s) => s.play);
+  const enable = useAudioStore((s) => s.enable);
 
   const handleEnter = () => {
-    toggle();
-    play("/sounds/home.mp3");
+    enable();
+    play("bgm", "/sounds/home.mp3", { fadeIn: 1000 });
     handleNext({
       next: scene.next,
       transition: scene.transition,
