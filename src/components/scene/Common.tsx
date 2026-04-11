@@ -7,7 +7,7 @@ import { handleNext } from "@/utils/scene";
 
 export function CommonScene({ scene, goTo }: SceneProps) {
   if (!scene.src && scene.text) {
-    return <CommonOverlay text={scene.text} />;
+    return <CommonOverlay scene={scene} goTo={goTo} />;
   }
   if (scene.format === "image") {
     return (
