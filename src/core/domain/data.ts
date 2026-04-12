@@ -8,9 +8,14 @@ export interface ICreateData {
   name: string;
   age: number;
   scene_18: string;
+  scene_30: string;
 }
 
 export interface IScene3 {
   name: string;
   age: number;
+}
+
+export interface IScene30 {
+  scene_30: string;
 }

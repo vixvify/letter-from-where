@@ -47,4 +47,13 @@ export const VariantScenes: ScenesDataType = {
       nextC: "scene_31",
     },
   },
+  scene_30: {
+    src: undefined,
+    next: "scene_31",
+    text: SceneText.scene_30,
+    type: "input",
+    format: "image",
+    transition: "white-fade",
+    inputField: "scene_30",
+  },
 };

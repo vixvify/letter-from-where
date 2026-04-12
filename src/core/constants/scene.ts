@@ -7,6 +7,7 @@ import Custom3 from "@/components/scene/custom/Custom-3";
 import Custom14 from "@/components/scene/custom/Custom-14";
 import Custom17 from "@/components/scene/custom/Custom-17";
 import Custom28 from "@/components/scene/custom/Custom-28.";
+import Custom34 from "@/components/scene/custom/Custom-34";
 import CommonOverlay from "@/components/overlay/Common";
 import ChoiceOverlay from "@/components/overlay/Choice";
 import InputOverlay from "@/components/overlay/Input";
@@ -21,6 +22,7 @@ export const SceneComponentMap = {
   custom14: Custom14,
   custom17: Custom17,
   custom28: Custom28,
+  custom34: Custom34,
 };
 
 export const SceneOverlayMap = {
