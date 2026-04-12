@@ -11,4 +11,22 @@ export const VariantScenes: ScenesDataType = {
     format: "image",
     transition: "black-fade",
   },
+  scene_18: {
+    src: SceneUrls.scene_18,
+    next: null,
+    text: SceneText.scene_18,
+    type: "choice",
+    format: "image",
+    transition: "black-fade",
+    choice: {
+      A: "น่ากลัว",
+      B: "น่าสนุก",
+      C: "น่าเบื่อ",
+    },
+    choiceNext: {
+      nextA: "scene_19",
+      nextB: "scene_22",
+      nextC: "scene_25",
+    },
+  },
 };

@@ -42,7 +42,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={isDisabled}
-      className={`px-8 py-2 mt-4 font-medium rounded-md transition
+      className={`px-8 py-2 mt-4 rounded-md transition
         ${
           isDisabled
             ? "bg-gray-300 text-gray-500 cursor-not-allowed"

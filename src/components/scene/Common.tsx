@@ -7,7 +7,7 @@ import { handleNext } from "@/utils/scene";
 
 export function CommonScene({ scene, goTo }: SceneProps) {
   if (!scene.src && scene.text) {
-    return <CommonOverlay text={scene.text} />;
+    return <CommonOverlay scene={scene} goTo={goTo} />;
   }
   if (scene.format === "image") {
     return (
@@ -28,6 +28,7 @@ export function CommonScene({ scene, goTo }: SceneProps) {
             width={1000}
             height={1920}
             className="w-full h-screen"
+            priority
           ></Image>
         )}
         <h1 className="absolute inset-0 z-10 flex items-center justify-center text-[18px] font-bold text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)]">

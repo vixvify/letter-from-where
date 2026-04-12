@@ -3,8 +3,12 @@
 import { SceneProps } from "@/core/domain/scene";
 import Image from "next/image";
 import { handleNext } from "@/utils/scene";
+import ChoicesOverlay from "../overlay/Choice";
 
 export function ChoiceScene({ scene, goTo }: SceneProps) {
+  if (!scene.src && scene.text) {
+    return <ChoicesOverlay scene={scene} goTo={goTo} />;
+  }
   if (scene.choice && scene.format === "image") {
     return (
       <div
