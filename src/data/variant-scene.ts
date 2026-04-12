@@ -29,4 +29,22 @@ export const VariantScenes: ScenesDataType = {
       nextC: "scene_25",
     },
   },
+  scene_29: {
+    src: undefined,
+    next: null,
+    text: SceneText.scene_29,
+    type: "choice",
+    format: "image",
+    transition: "white-fade",
+    choice: {
+      A: "มี",
+      B: "ไม่มี",
+      C: "ไม่แน่ใจ",
+    },
+    choiceNext: {
+      nextA: "scene_30",
+      nextB: "scene_31",
+      nextC: "scene_31",
+    },
+  },
 };

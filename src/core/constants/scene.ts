@@ -5,10 +5,11 @@ import Custom1 from "@/components/scene/custom/Custom-1";
 import Custom2 from "@/components/scene/custom/Custom-2";
 import Custom3 from "@/components/scene/custom/Custom-3";
 import Custom14 from "@/components/scene/custom/Custom-14";
+import Custom17 from "@/components/scene/custom/Custom-17";
+import Custom28 from "@/components/scene/custom/Custom-28.";
 import CommonOverlay from "@/components/overlay/Common";
 import ChoiceOverlay from "@/components/overlay/Choice";
 import InputOverlay from "@/components/overlay/Input";
-import Custom17 from "@/components/scene/custom/Custom-17";
 
 export const SceneComponentMap = {
   common: CommonScene,
@@ -19,6 +20,7 @@ export const SceneComponentMap = {
   custom3: Custom3,
   custom14: Custom14,
   custom17: Custom17,
+  custom28: Custom28,
 };
 
 export const SceneOverlayMap = {

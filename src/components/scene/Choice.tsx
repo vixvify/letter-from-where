@@ -30,7 +30,7 @@ export function ChoiceScene({ scene, goTo }: SceneProps) {
             className="w-full h-screen"
           ></Image>
         )}
-        <h1 className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-white">
+        <h1 className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-white whitespace-pre-line">
           {scene.text}
         </h1>
       </div>
