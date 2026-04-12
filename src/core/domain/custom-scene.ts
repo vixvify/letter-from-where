@@ -3,4 +3,5 @@ export type CustomSceneKey =
   | "custom2"
   | "custom3"
   | "custom14"
-  | "custom17";
+  | "custom17"
+  | "custom28";

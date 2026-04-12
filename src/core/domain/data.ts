@@ -7,7 +7,7 @@ export interface IData {
 export interface ICreateData {
   name: string;
   age: number;
-  scene_1: string;
+  scene_18: string;
 }
 
 export interface IScene3 {
