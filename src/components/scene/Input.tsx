@@ -3,8 +3,12 @@
 import { SceneProps } from "@/core/domain/scene";
 import Image from "next/image";
 import { handleNext } from "@/utils/scene";
+import InputOverlay from "../overlay/Input";
 
 export function InputScene({ scene, goTo }: SceneProps) {
+  if (!scene.src && scene.text) {
+    return <InputOverlay scene={scene} goTo={goTo} />;
+  }
   if (scene.choice && scene.format === "image") {
     return (
       <div
