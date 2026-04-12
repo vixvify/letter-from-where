@@ -4,6 +4,7 @@ import { InputScene } from "@/components/scene/Input";
 import Custom1 from "@/components/scene/custom/Custom-1";
 import Custom2 from "@/components/scene/custom/Custom-2";
 import Custom3 from "@/components/scene/custom/Custom-3";
+import Custom14 from "@/components/scene/custom/Custom-14";
 import CommonOverlay from "@/components/overlay/Common";
 import ChoiceOverlay from "@/components/overlay/Choice";
 import InputOverlay from "@/components/overlay/Input";
@@ -15,6 +16,7 @@ export const SceneComponentMap = {
   custom1: Custom1,
   custom2: Custom2,
   custom3: Custom3,
+  custom14: Custom14,
 };
 
 export const SceneOverlayMap = {
