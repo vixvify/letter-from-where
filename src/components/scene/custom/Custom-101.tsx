@@ -6,16 +6,24 @@ import ShareIcon from "@mui/icons-material/Share";
 
 export default function Custom101() {
   const handleShare = async () => {
-    if (!navigator.share) {
-      alert("มือถือเครื่องนี้ไม่รองรับการแชร์");
-      return;
-    }
     try {
-      await navigator.share({
-        url: `${window.location.origin}/poster-1.jpg`,
+      const res = await fetch("/poster-1.png");
+      const blob = await res.blob();
+
+      const file = new File([blob], "poster.png", {
+        type: blob.type,
       });
+
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: "My Poster",
+        });
+      } else {
+        alert("เครื่องนี้ไม่รองรับการแชร์รูป");
+      }
     } catch (err) {
-      console.log("cancel หรือ error:", err);
+      console.log("error:", err);
     }
   };
   const { data } = useFormStore();
