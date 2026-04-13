@@ -36,6 +36,7 @@ export default function InputOverlay({ scene, goTo }: SceneProps) {
           label=""
           placeholder="text..."
           register={register("value", { required: "กรุณากรอกข้อมูล" })}
+          className="mt-3"
         />
         <div className="flex items-center justify-end">
           <Button type="submit" isValid={isValid}>
