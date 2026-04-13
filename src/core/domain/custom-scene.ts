@@ -14,6 +14,8 @@ export type CustomSceneKey =
   | "custom86"
   | "custom91"
   | "custom97"
+  | "custom101"
   | "custom100"
   | "custom104"
-  | "custom111";
+  | "custom111"
+  | "custom112";
