@@ -17,6 +17,8 @@ import Custom86 from "@/components/scene/custom/Custom-86";
 import Custom91 from "@/components/scene/custom/Custom-91";
 import Custom97 from "@/components/scene/custom/Custom-97";
 import Custom100 from "@/components/scene/custom/Custom-100";
+import Custom101 from "@/components/scene/custom/Custom-101";
+import Custom112 from "@/components/scene/custom/Custom-112";
 import Custom104 from "@/components/scene/custom/Custom-104";
 import Custom111 from "@/components/scene/custom/Custom-111";
 import CommonOverlay from "@/components/overlay/Common";
@@ -43,8 +45,10 @@ export const SceneComponentMap = {
   custom91: Custom91,
   custom97: Custom97,
   custom100: Custom100,
+  custom101: Custom101,
   custom104: Custom104,
   custom111: Custom111,
+  custom112: Custom112,
 };
 
 export const SceneOverlayMap = {
