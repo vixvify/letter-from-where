@@ -3,15 +3,25 @@ import Image from "next/image";
 import IconButton from "@mui/material/IconButton";
 import DownloadIcon from "@mui/icons-material/Download";
 import ShareIcon from "@mui/icons-material/Share";
+import { useRef } from "react";
+import html2canvas from "html2canvas";
 
 export default function Custom101() {
+  const ref = useRef<HTMLDivElement>(null);
   const handleShare = async () => {
     try {
-      const res = await fetch("/poster-1.png");
-      const blob = await res.blob();
+      if (!ref.current) return;
+
+      const canvas = await html2canvas(ref.current);
+
+      const blob = await new Promise<Blob | null>((resolve) =>
+        canvas.toBlob(resolve, "image/png"),
+      );
+
+      if (!blob) return;
 
       const file = new File([blob], "poster.png", {
-        type: blob.type,
+        type: "image/png",
       });
 
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
@@ -20,15 +30,15 @@ export default function Custom101() {
           title: "My Poster",
         });
       } else {
-        alert("เครื่องนี้ไม่รองรับการแชร์รูป");
+        alert("เครื่องนี้ไม่รองรับการแชร์");
       }
     } catch (err) {
-      console.log("error:", err);
+      console.log(err);
     }
   };
   const { data } = useFormStore();
   return (
-    <div className="fixed inset-0 flex items-center justify-center">
+    <div className="fixed inset-0 flex items-center justify-center" ref={ref}>
       <div className="flex flex-col items-center justify-center gap-10">
         <h1 className="text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold">
           จงโอบกอดโอกาสตรงหน้า <br /> เพราะมันคู่ควรกับ {data.name} ที่สุด
