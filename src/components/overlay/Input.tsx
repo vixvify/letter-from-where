@@ -1,21 +1,49 @@
-import { useState } from "react";
+import { handleNext } from "@/utils/scene";
 import { SceneProps } from "@/core/domain/scene";
+import TextField from "../TextField";
+import { useFormStore } from "@/store/data";
+import { useForm } from "react-hook-form";
+import Button from "../Button";
+import { ICreateData } from "@/core/domain/data";
 
 export default function InputOverlay({ scene, goTo }: SceneProps) {
-  const [value, setValue] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm<{ value: string }>({
+    mode: "onChange",
+  });
 
+  const { setField } = useFormStore();
+  const onSubmit = (data: { value: string }) => {
+    if (scene.inputField) {
+      setField(scene.inputField as keyof ICreateData, data.value);
+    }
+    handleNext({
+      next: scene.next,
+      transition: scene.transition,
+      goTo,
+    });
+  };
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-start pt-16">
-      <div className="space-y-4 text-center">
-        <h2 className="text-2xl text-white">{scene.text}</h2>
-
-        <input
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Type here..."
-          className="px-4 py-2 text-lg text-white outline-none rounded-xl bg-white/10 backdrop-blur"
+    <div className="fixed inset-0 flex flex-col items-center justify-center">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
+        <h1 className="text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold">
+          {scene.text}
+        </h1>
+        <TextField
+          label=""
+          placeholder="text..."
+          register={register("value", { required: "กรุณากรอกข้อมูล" })}
+          className="mt-3"
         />
-      </div>
+        <div className="flex items-center justify-end">
+          <Button type="submit" isValid={isValid}>
+            ต่อไป
+          </Button>
+        </div>
+      </form>
     </div>
   );
 }

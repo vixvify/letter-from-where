@@ -5,7 +5,7 @@ import { CustomScenes } from "./custom-scene";
 import { VariantScenes } from "./variant-scene";
 
 const CommonScenes: ScenesDataType = Object.fromEntries(
-  Array.from({ length: 50 }, (_, i) => {
+  Array.from({ length: 112 }, (_, i) => {
     const id = i + 1;
     const key = `scene_${id}`;
 
@@ -13,7 +13,7 @@ const CommonScenes: ScenesDataType = Object.fromEntries(
       key,
       {
         src: SceneUrls[key as keyof typeof SceneUrls],
-        next: id < 50 ? `scene_${id + 1}` : null,
+        next: id < 112 ? `scene_${id + 1}` : null,
         text: SceneText[key as keyof typeof SceneText],
         type: "common",
         format: "image",

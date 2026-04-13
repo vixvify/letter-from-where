@@ -4,4 +4,16 @@ export type CustomSceneKey =
   | "custom3"
   | "custom14"
   | "custom17"
-  | "custom28";
+  | "custom28"
+  | "custom34"
+  | "custom51"
+  | "custom62"
+  | "custom69"
+  | "custom83"
+  | "custom85"
+  | "custom86"
+  | "custom91"
+  | "custom97"
+  | "custom100"
+  | "custom104"
+  | "custom111";
