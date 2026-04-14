@@ -1,56 +1,105 @@
 import { useFormStore } from "@/store/data";
-import Image from "next/image";
 import IconButton from "@mui/material/IconButton";
 import DownloadIcon from "@mui/icons-material/Download";
 import ShareIcon from "@mui/icons-material/Share";
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 
-export default function Custom112() {
+export default function Custom101() {
   const ref = useRef<HTMLDivElement>(null);
   const handleShare = async () => {
     try {
       if (!ref.current) return;
 
-      const canvas = await html2canvas(ref.current);
-
-      const blob = await new Promise<Blob | null>((resolve) =>
-        canvas.toBlob(resolve, "image/png"),
-      );
-
-      if (!blob) return;
-
-      const file = new File([blob], "poster.png", {
-        type: "image/png",
+      const canvas = await html2canvas(ref.current, {
+        ignoreElements: (element) => {
+          return element.classList?.contains("ignore-capture");
+        },
+        scale: 10,
+        backgroundColor: "#ffffff",
+        useCORS: true,
       });
 
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      const blob = await new Promise<Blob>((resolve, reject) => {
+        canvas.toBlob(
+          (b) => {
+            if (b) resolve(b);
+            else reject("blob failed");
+          },
+          "image/jpeg",
+          0.9,
+        );
+      });
+
+      const file = new File([blob], "poster.jpg", {
+        type: "image/jpeg",
+      });
+
+      if (navigator.canShare?.({ files: [file] })) {
         await navigator.share({
           files: [file],
           title: "My Poster",
         });
       } else {
-        alert("เครื่องนี้ไม่รองรับการแชร์");
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "poster.jpg";
+        a.click();
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
+
+  const handleDownload = async () => {
+    try {
+      if (!ref.current) return;
+
+      const canvas = await html2canvas(ref.current, {
+        ignoreElements: (element) => {
+          return element.classList?.contains("ignore-capture");
+        },
+        scale: 10,
+        backgroundColor: "#ffffff",
+        useCORS: true,
+      });
+
+      const url = canvas.toDataURL("image/jpeg", 0.9);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "poster.jpg";
+      a.click();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const { data } = useFormStore();
+  const name = data.name;
+
   return (
     <div className="fixed inset-0 flex items-center justify-center" ref={ref}>
       <div className="flex flex-col items-center justify-center gap-10">
         <h1 className="text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold">
-          จงโอบกอดโอกาสตรงหน้า <br /> เพราะมันคู่ควรกับ {data.name} ที่สุด
+          ฟ้าหลังฝนจะมาตอนที่ <br /> เธอโอบกอดตัวเอง <br />
+          เพราะ {name} มีคนเดียวในโลกนะ
         </h1>
-        <div className="relative transition duration-500 transform -rotate-6 hover:rotate-0">
-          <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-lg bg-black/20 blur-xl"></div>
-          <Image
+        <div
+          className="relative"
+          style={{
+            transform: "rotate(3deg)",
+            borderRadius: "12px",
+            boxShadow: "0 10px 20px rgba(0,0,0,0.3)",
+          }}
+        >
+          <img
             src="/poster-2.png"
-            width={200}
-            height={300}
+            width={150}
+            height={250}
             alt="poster"
-            className="relative rounded-lg shadow-2xl"
+            className="rounded-lg"
           />
         </div>
         <div>
@@ -63,12 +112,10 @@ export default function Custom112() {
             </h1>
           </div>
         </div>
-        <div className="flex gap-4">
-          <a href="/poster-1.png" download>
-            <IconButton color="primary">
-              <DownloadIcon />
-            </IconButton>
-          </a>
+        <div className="flex gap-4 ignore-capture">
+          <IconButton color="primary" onClick={handleDownload}>
+            <DownloadIcon />
+          </IconButton>
           <IconButton color="primary">
             <ShareIcon onClick={handleShare} />
           </IconButton>
