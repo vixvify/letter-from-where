@@ -5,6 +5,7 @@ import { transitionFadeTypeMap } from "@/core/constants/fade-transition";
 
 export default function TransitionOverlay() {
   const transition = useTransitionStore((s) => s.transition);
+  const setTransition = useTransitionStore((s) => s.setTransition);
 
   if (!transition) return null;
 
@@ -16,5 +17,14 @@ export default function TransitionOverlay() {
   const bg = transitionFadeTypeMap[type as keyof typeof transitionFadeTypeMap];
   const anim = phase === "enter" ? "animate-fade-in" : "animate-fade-out";
 
-  return <div className={`${base} ${bg} ${anim}`} />;
+  return (
+    <div
+      className={`${base} ${bg} ${anim}`}
+      onAnimationEnd={() => {
+        if (phase === "exit") {
+          setTransition(null);
+        }
+      }}
+    />
+  );
 }

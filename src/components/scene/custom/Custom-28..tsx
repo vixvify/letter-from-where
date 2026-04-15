@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { SceneProps } from "@/core/domain/scene";
 import { handleNext } from "@/utils/scene";
-import Image from "next/image";
 import { useFormStore } from "@/store/data";
 import { SceneUrls } from "@/data/video-url";
+import { getCachedImage } from "@/lib/image-cache";
 
 export default function Custom28({ scene, goTo }: SceneProps) {
   const [step, setStep] = useState(0);
@@ -20,6 +20,7 @@ export default function Custom28({ scene, goTo }: SceneProps) {
 
   const selected = data.scene_18;
   const imageSrc = selected && choiceMap[selected] ? choiceMap[selected] : "";
+  const cached = imageSrc ? getCachedImage(imageSrc) : null;
 
   const nextStep = () => {
     setIsFadingOut(true);
@@ -47,12 +48,7 @@ export default function Custom28({ scene, goTo }: SceneProps) {
         handleClick();
       }}
     >
-      <img
-        src={imageSrc}
-        alt="bg"
-        className="w-full h-screen"
-        loading="eager"
-      />
+      <img src={cached?.src || imageSrc} alt="bg" className="w-full h-screen" />
       {step === 0 && (
         <h1
           className={`absolute inset-0 z-10 flex items-center justify-center text-[18px] text-center font-bold text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] ${isFadingOut ? "animate-fade-out" : "animate-fade-in"}`}
