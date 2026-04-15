@@ -5,7 +5,6 @@ import { Scene } from "@/core/domain/scene";
 import { SceneComponentMap } from "@/core/constants/scene";
 import { useTransitionStore } from "@/store/transition";
 import { useEffect } from "react";
-import { ScenesData } from "@/data/story";
 import { SceneUrls } from "@/data/video-url";
 
 type SceneProps = {
@@ -18,18 +17,16 @@ export default function SceneClient({ scene }: SceneProps) {
   const transition = useTransitionStore((s) => s.transition);
   const setTransition = useTransitionStore((s) => s.setTransition);
 
+  const preload = async (src: string) => {
+    const img = new Image();
+    img.src = src;
+    await img.decode();
+  };
+
   useEffect(() => {
     if (!transition) return;
 
     setTransition({ type: transition.type, phase: "exit" });
-
-    if (scene.next) {
-      const nextScene = scene.next;
-      if (nextScene && SceneUrls[nextScene]) {
-        const img = new window.Image();
-        img.src = SceneUrls[nextScene];
-      }
-    }
 
     const t = setTimeout(() => {
       setTransition(null);
@@ -37,6 +34,16 @@ export default function SceneClient({ scene }: SceneProps) {
 
     return () => clearTimeout(t);
   }, []);
+
+  useEffect(() => {
+    if (scene.next) {
+      const nextKey = scene.next;
+      const url = SceneUrls[nextKey];
+      if (url) {
+        preload(url);
+      }
+    }
+  }, [scene]);
 
   const Component = SceneComponentMap[scene.type];
 

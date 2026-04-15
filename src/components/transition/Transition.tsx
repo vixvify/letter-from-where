@@ -12,7 +12,7 @@ export default function TransitionOverlay() {
 
   if (!(type in transitionFadeTypeMap)) return null;
 
-  const base = "absolute inset-0 z-50 pointer-events-none";
+  const base = "fixed inset-0 z-[999] pointer-events-none";
   const bg = transitionFadeTypeMap[type as keyof typeof transitionFadeTypeMap];
   const anim = phase === "enter" ? "animate-fade-in" : "animate-fade-out";
 
