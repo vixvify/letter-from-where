@@ -21,8 +21,8 @@ export default function ScenesLayout({
     >
       <div className="relative w-full overflow-hidden bg-white max-w-[480px] min-h-dvh">
         <RouteSoundManager />
-        {children}
         <TransitionOverlay />
+        {children}
       </div>
     </div>
   );
