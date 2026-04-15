@@ -52,7 +52,6 @@ export default function Custom28({ scene, goTo }: SceneProps) {
         alt="bg"
         className="w-full h-screen"
         loading="eager"
-        decoding="sync"
       />
       {step === 0 && (
         <h1
