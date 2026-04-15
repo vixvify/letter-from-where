@@ -21,7 +21,13 @@ export function CommonScene({ scene, goTo }: SceneProps) {
         }}
       >
         {scene.src && (
-          <img src={scene.src} alt="bg" className="w-full h-screen" />
+          <img
+            src={scene.src}
+            alt="bg"
+            className="w-full h-screen"
+            loading="eager"
+            decoding="sync"
+          />
         )}
         <h1 className="absolute inset-0 z-10 flex items-center justify-center text-[18px] font-bold text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)]">
           {scene.text}

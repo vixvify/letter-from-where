@@ -47,7 +47,13 @@ export default function Custom28({ scene, goTo }: SceneProps) {
         handleClick();
       }}
     >
-      <img src={imageSrc} alt="bg" className="w-full h-screen" />
+      <img
+        src={imageSrc}
+        alt="bg"
+        className="w-full h-screen"
+        loading="eager"
+        decoding="sync"
+      />
       {step === 0 && (
         <h1
           className={`absolute inset-0 z-10 flex items-center justify-center text-[18px] text-center font-bold text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] ${isFadingOut ? "animate-fade-out" : "animate-fade-in"}`}
