@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: [
-    "192.168.1.51",
+    "192.168.1.67",
     "tritheistical-coltish-ibrahim.ngrok-free.dev",
   ],
   images: {

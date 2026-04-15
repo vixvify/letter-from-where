@@ -5,6 +5,8 @@ import { Scene } from "@/core/domain/scene";
 import { SceneComponentMap } from "@/core/constants/scene";
 import { useTransitionStore } from "@/store/transition";
 import { useEffect } from "react";
+import { ScenesData } from "@/data/story";
+import { SceneUrls } from "@/data/video-url";
 
 type SceneProps = {
   scene: Scene;
@@ -20,6 +22,14 @@ export default function SceneClient({ scene }: SceneProps) {
     if (!transition) return;
 
     setTransition({ type: transition.type, phase: "exit" });
+
+    if (scene.next) {
+      const nextScene = scene.next;
+      if (nextScene && SceneUrls[nextScene]) {
+        const img = new window.Image();
+        img.src = SceneUrls[nextScene];
+      }
+    }
 
     const t = setTimeout(() => {
       setTransition(null);
