@@ -64,9 +64,9 @@ body {
   }
 
   .animate-fade-out {
-    animation: fade-out 1s ease-in-out forwards;
+    animation: fade-out 1s linear forwards;
   }
   .animate-fade-in-common {
-    animation: fade-in 1s ease-in-out forwards;
+    animation: fade-in 1s linear forwards;
   }
 }
