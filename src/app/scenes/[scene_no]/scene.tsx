@@ -7,6 +7,8 @@ import { useTransitionStore } from "@/store/transition";
 import { useEffect } from "react";
 import { SceneUrls } from "@/data/video-url";
 import { preloadImage } from "@/lib/image-cache";
+import { CustomSceneWithImage } from "@/core/constants/scene";
+import { usePathname } from "next/navigation";
 
 type SceneProps = {
   scene: Scene;
@@ -14,14 +16,22 @@ type SceneProps = {
 
 export default function SceneClient({ scene }: SceneProps) {
   const { goTo } = useSceneTransition();
-
+  const pathname = usePathname();
+  const key = pathname.replace("/scenes/", "");
   const transition = useTransitionStore((s) => s.transition);
   const setTransition = useTransitionStore((s) => s.setTransition);
 
   useEffect(() => {
     if (!transition) return;
 
-    setTransition({ type: transition.type, phase: "exit" });
+    if (!scene.src && !CustomSceneWithImage.find((s) => s === key)) {
+      setTransition({ type: transition.type, phase: "exit" });
+      return;
+    }
+
+    setTimeout(() => {
+      setTransition({ type: transition.type, phase: "exit" });
+    }, 300);
   }, []);
 
   useEffect(() => {

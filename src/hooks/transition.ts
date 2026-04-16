@@ -16,6 +16,7 @@ export function useSceneTransition() {
     setTransition({ type, phase: "enter" });
 
     setTimeout(() => {
+      setTransition({ type, phase: "between" });
       router.replace(`/scenes/${next}`);
     }, 1000);
   };

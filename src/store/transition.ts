@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { TransitionType } from "@/core/domain/transition";
 
-type Phase = "enter" | "exit";
+type Phase = "enter" | "exit" | "between";
 
 type State = {
   transition: {
