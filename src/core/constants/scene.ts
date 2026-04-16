@@ -56,3 +56,5 @@ export const SceneOverlayMap = {
   choice: ChoiceOverlay,
   input: InputOverlay,
 };
+
+export const CustomSceneWithImage = ["scene_28"];
