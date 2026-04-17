@@ -1,3 +1,5 @@
+export type ChoiceKey = "A" | "B" | "C";
+
 export type Choice = {
   A: string;
   B: string;

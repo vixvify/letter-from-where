@@ -7,16 +7,16 @@ export interface IData {
 export interface ICreateData {
   name: string;
   age: number;
-  scene_18: string;
-  scene_29: string;
-  scene_30: string;
-  scene_40: string;
-  scene_41: string;
+  scene_18: string; // choice
+  scene_29: string; // choice
+  scene_30?: string;
+  scene_40: string; // choice
+  scene_41?: string;
   scene_46: string;
-  scene_52: string;
-  scene_69: string;
-  scene_70: string;
-  scene_94: string;
+  scene_52: string; // choice
+  scene_69: string; // choice
+  scene_70?: string;
+  scene_94: string; // choice
 }
 
 export interface IScene3 {

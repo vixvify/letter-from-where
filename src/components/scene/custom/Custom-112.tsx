@@ -4,9 +4,18 @@ import DownloadIcon from "@mui/icons-material/Download";
 import ShareIcon from "@mui/icons-material/Share";
 import { useRef } from "react";
 import html2canvas from "html2canvas";
+import mapChoice from "@/core/constants/data-map";
+import { dataService } from "@/infra/container";
+import { parseSchema } from "@/lib/validation";
+import { createDataSchema } from "@/core/domain/data.schema";
+import { useEffect } from "react";
 
 export default function Custom101() {
   const ref = useRef<HTMLDivElement>(null);
+  const { data } = useFormStore();
+  const name = data.name;
+  const isHydrated = useFormStore.persist.hasHydrated();
+
   const handleShare = async () => {
     try {
       if (!ref.current) return;
@@ -76,8 +85,30 @@ export default function Custom101() {
     }
   };
 
-  const { data } = useFormStore();
-  const name = data.name;
+  const handleSaveData = async () => {
+    try {
+      const validData = parseSchema(createDataSchema, data);
+
+      const payload = {
+        ...validData,
+        scene_18: mapChoice("scene_18", validData.scene_18),
+        scene_29: mapChoice("scene_29", validData.scene_29),
+        scene_40: mapChoice("scene_40", validData.scene_40),
+        scene_52: mapChoice("scene_52", validData.scene_52),
+        scene_69: mapChoice("scene_69", validData.scene_69),
+        scene_94: mapChoice("scene_94", validData.scene_94),
+      };
+
+      await dataService.createData(payload);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    if (!isHydrated) return;
+    handleSaveData();
+  }, [isHydrated]);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center" ref={ref}>
