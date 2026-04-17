@@ -2,7 +2,7 @@
 
 import { Sarabun } from "next/font/google";
 import "./globals.css";
-import ThemeRegistry from "@/lib/themeRegistry";
+import ThemeRegistry from "@/lib/theme-registry";
 
 const sarabun = Sarabun({
   subsets: ["latin", "thai"],
