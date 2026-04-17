@@ -9,7 +9,17 @@ datasource db {
 
 model Data {
   id    Int     @id @default(autoincrement())
-  age String
-  gender String
-  quiz_1 String
+  name String
+  age Int
+
+  scene_18 String
+  scene_29 String
+  scene_30 String?
+  scene_40 String
+  scene_41 String?
+  scene_46 String
+  scene_52 String
+  scene_69 String
+  scene_70 String?
+  scene_94 String
 }
