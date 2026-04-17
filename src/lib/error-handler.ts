@@ -8,7 +8,7 @@ const errorMessages: Record<string, string> = {
 export function handleError(error: unknown): string {
   if (error instanceof ApiError) {
     if (error.status === 401) {
-      return "กรุณา login ใหม่";
+      return "รหัสผ่านไม่ถูกต้อง";
     }
 
     if (error.statusCode && errorMessages[error.statusCode]) {
