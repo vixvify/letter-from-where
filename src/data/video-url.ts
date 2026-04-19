@@ -17,6 +17,9 @@ export const SceneUrls: Record<string, string | undefined> = {
   ...CustomSceneUrls,
   scene_15: process.env.NEXT_PUBLIC_URL_SOCIETY_COMMON,
   scene_19: process.env.NEXT_PUBLIC_URL_SOCIETY_SCARY,
+  scene_21: process.env.NEXT_PUBLIC_URL_VIDEO_SOCIETY_SCARY,
+  scene_24: process.env.NEXT_PUBLIC_URL_VIDEO_SOCIETY_EXCITED,
+  scene_27: process.env.NEXT_PUBLIC_URL_VIDEO_SOCIETY_BORING,
   scene_22: process.env.NEXT_PUBLIC_URL_SOCIETY_EXCITED,
   scene_25: process.env.NEXT_PUBLIC_URL_SOCIETY_BORING,
 };
