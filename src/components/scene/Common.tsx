@@ -52,7 +52,11 @@ export function CommonScene({ scene, goTo }: SceneProps) {
             src={scene.src}
             width={1000}
             height={1920}
-            className="w-full h-screen"
+            className="absolute inset-0 object-cover w-full h-full"
+            autoPlay
+            muted
+            loop
+            playsInline
           ></video>
         )}
         <h1 className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-white">
