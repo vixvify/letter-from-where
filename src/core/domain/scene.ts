@@ -27,4 +27,5 @@ export type ScenesDataType = {
 export type SceneProps = {
   scene: Scene;
   goTo: (next: string, type: TransitionType) => void;
+  onLoadingComplate?: (status: boolean) => void;
 };
