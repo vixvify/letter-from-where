@@ -19,7 +19,9 @@ export default function TransitionOverlay() {
     phase === "between"
       ? ""
       : phase === "enter"
-        ? "animate-fade-in"
+        ? transition.type === "flash"
+          ? "animate-fade-in-flash"
+          : "animate-fade-in"
         : "animate-fade-out";
 
   return (

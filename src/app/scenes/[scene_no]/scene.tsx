@@ -6,9 +6,10 @@ import { SceneComponentMap } from "@/core/constants/scene";
 import { useTransitionStore } from "@/store/transition";
 import { useEffect, useState } from "react";
 import { SceneUrls } from "@/data/video-url";
-import { preloadImage } from "@/lib/image-cache";
+import { preloadImage, preloadVideo } from "@/lib/image-cache";
 import { CustomSceneWithImage } from "@/core/constants/scene";
 import { usePathname } from "next/navigation";
+import { ScenesData } from "@/data/story";
 
 type SceneProps = {
   scene: Scene;
@@ -47,7 +48,9 @@ export default function SceneClient({ scene }: SceneProps) {
   useEffect(() => {
     if (scene.next) {
       const url = SceneUrls[scene.next];
-      if (url) preloadImage(url);
+      const nextScene = ScenesData[scene.next];
+      if (url && nextScene.format === "image") preloadImage(url);
+      if (url && nextScene.format === "video") preloadVideo(url);
     }
   }, [scene]);
 

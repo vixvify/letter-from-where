@@ -1,6 +1,4 @@
 export const AudioUrls: Record<string, string | undefined> = {
-  scene_1: process.env.NEXT_PUBLIC_URL_AUDIO_1,
-  scene_2: process.env.NEXT_PUBLIC_URL_AUDIO_2,
-  scene_3: process.env.NEXT_PUBLIC_URL_AUDIO_3,
+  music: process.env.NEXT_PUBLIC_URL_AUDIO_1,
   rain: process.env.NEXT_PUBLIC_URL_AUDIO_RAIN,
 };

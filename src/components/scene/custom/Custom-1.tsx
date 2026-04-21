@@ -10,8 +10,8 @@ export default function Custom1({ scene, goTo }: SceneProps) {
 
   const handleEnter = () => {
     enable();
-    if (AudioUrls["scene_1"] && AudioUrls["rain"]) {
-      play("bgm", AudioUrls["scene_1"], {
+    if (AudioUrls["music"]) {
+      play("bgm", AudioUrls["music"], {
         fadeIn: 1500,
         loop: true,
         volume: 0.5,

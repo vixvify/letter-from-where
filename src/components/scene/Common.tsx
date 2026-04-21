@@ -3,12 +3,13 @@
 import { SceneProps } from "@/core/domain/scene";
 import CommonOverlay from "../overlay/Common";
 import { handleNext } from "@/utils/scene";
-import { getCachedImage } from "@/lib/image-cache";
+import { getCachedImage, getCachedVideo } from "@/lib/image-cache";
 
 export function CommonScene({ scene, goTo, onLoadingComplate }: SceneProps) {
-  const cached = scene.src ? getCachedImage(scene.src) : null;
+  const cachedimg = scene.src ? getCachedImage(scene.src) : null;
+  const cachedvideo = scene.src ? getCachedVideo(scene.src) : null;
 
-  if (!scene.src && scene.text) {
+  if (!scene.src || (!scene.src && scene.text)) {
     return <CommonOverlay scene={scene} goTo={goTo} />;
   }
   if (scene.format === "image") {
@@ -25,7 +26,7 @@ export function CommonScene({ scene, goTo, onLoadingComplate }: SceneProps) {
       >
         {scene.src && (
           <img
-            src={cached?.src || scene.src}
+            src={cachedimg?.src || scene.src}
             alt="bg"
             className="w-full h-screen"
             onLoad={() => onLoadingComplate?.(true)}
@@ -50,14 +51,13 @@ export function CommonScene({ scene, goTo, onLoadingComplate }: SceneProps) {
       >
         {scene.src && (
           <video
-            src={scene.src}
-            width={1000}
-            height={1920}
-            className="absolute inset-0 object-cover w-full h-full"
+            src={cachedvideo?.src || scene.src}
+            className="absolute inset-0 object-cover w-full h-full "
             autoPlay
             muted
             loop
             playsInline
+            onLoadedData={() => onLoadingComplate?.(true)}
           ></video>
         )}
         <h1 className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-white">
