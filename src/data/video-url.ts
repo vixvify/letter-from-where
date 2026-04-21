@@ -13,6 +13,7 @@ export const CustomSceneUrls: Record<string, string | undefined> = {
   society_scary_cu: process.env.NEXT_PUBLIC_URL_SOCIETY_SCARY_CLOSE_UP,
   society_excited_cu: process.env.NEXT_PUBLIC_URL_SOCIETY_EXCITED_CLOSE_UP,
   society_boring_cu: process.env.NEXT_PUBLIC_URL_SOCIETY_BORING_CLOSE_UP,
+  letter: process.env.NEXT_PUBLIC_URL_LETTER,
 };
 
 export const SceneUrls: Record<string, string | undefined> = {
@@ -25,4 +26,6 @@ export const SceneUrls: Record<string, string | undefined> = {
   scene_24: process.env.NEXT_PUBLIC_URL_VIDEO_SOCIETY_EXCITED,
   scene_25: process.env.NEXT_PUBLIC_URL_SOCIETY_BORING,
   scene_27: process.env.NEXT_PUBLIC_URL_VIDEO_SOCIETY_BORING,
+  scene_99: process.env.NEXT_PUBLIC_URL_LETTER,
+  scene_110: process.env.NEXT_PUBLIC_URL_LETTER,
 };
