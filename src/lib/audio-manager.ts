@@ -15,13 +15,83 @@ export default function RouteSoundManager() {
   useEffect(() => {
     if (!enabled) return;
 
-    if (pathname.startsWith("/scenes/scene_10") && AudioUrls["rain"]) {
+    if (pathname.startsWith("/scenes/scene_4")) {
+      stop("bgm", { fadeOut: 1500 });
+
+      return;
+    }
+    if (pathname.startsWith("/scenes/scene_12") && AudioUrls["rain"]) {
       play("ambient", AudioUrls["rain"], {
-        fadeIn: 1000,
+        fadeIn: 1500,
         loop: true,
       });
+    }
+    if (pathname.startsWith("/scenes/scene_15")) {
+      stop("ambient", { fadeOut: 1500 });
 
-      stop("bgm", { fadeOut: 800 });
+      return;
+    }
+    if (pathname.startsWith("/scenes/scene_28") && AudioUrls["music"]) {
+      play("bgm", AudioUrls["music"], {
+        fadeIn: 1500,
+        loop: true,
+        volume: 0.5,
+      });
+    }
+    if (pathname.startsWith("/scenes/scene_31")) {
+      stop("bgm", { fadeOut: 1500 });
+
+      return;
+    }
+    if (pathname.startsWith("/scenes/scene_42") && AudioUrls["music"]) {
+      play("bgm", AudioUrls["music"], {
+        fadeIn: 1500,
+        loop: true,
+        volume: 0.5,
+      });
+    }
+    if (pathname.startsWith("/scenes/scene_63") && AudioUrls["rain"]) {
+      play("ambient", AudioUrls["rain"], {
+        fadeIn: 1500,
+        loop: true,
+      });
+    }
+    if (pathname.startsWith("/scenes/scene_65")) {
+      stop("ambient", { fadeOut: 1500 });
+
+      return;
+    }
+    if (pathname.startsWith("/scenes/scene_90") && AudioUrls["rain"]) {
+      play("ambient", AudioUrls["rain"], {
+        fadeIn: 1500,
+        loop: true,
+      });
+    }
+    if (pathname.startsWith("/scenes/scene_95")) {
+      stop("ambient", { fadeOut: 1500 });
+
+      return;
+    }
+    if (pathname.startsWith("/scenes/scene_88")) {
+      stop("bgm", { fadeOut: 1500 });
+
+      return;
+    }
+    if (pathname.startsWith("/scenes/scene_96") && AudioUrls["music"]) {
+      play("bgm", AudioUrls["music"], {
+        fadeIn: 1500,
+        loop: true,
+        volume: 0.5,
+      });
+    }
+    if (pathname.startsWith("/scenes/scene_102") && AudioUrls["rain"]) {
+      play("ambient", AudioUrls["rain"], {
+        fadeIn: 1500,
+        loop: true,
+      });
+    }
+    if (pathname.startsWith("/scenes/scene_106")) {
+      stop("ambient", { fadeOut: 1500 });
 
       return;
     }

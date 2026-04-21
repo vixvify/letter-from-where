@@ -1,4 +1,5 @@
 import { ScenesDataType } from "@/core/domain/scene";
+import { SceneUrls } from "./video-url";
 
 export const CustomScenes: ScenesDataType = {
   scene_1: {
@@ -46,6 +47,12 @@ export const CustomScenes: ScenesDataType = {
   scene_34: {
     next: "scene_35",
     type: "custom34",
+    format: "image",
+    transition: "white-fade",
+  },
+  scene_37: {
+    next: "scene_38",
+    type: "custom37",
     format: "image",
     transition: "white-fade",
   },
@@ -97,6 +104,13 @@ export const CustomScenes: ScenesDataType = {
     format: "image",
     transition: "white-fade",
   },
+  scene_99: {
+    src: SceneUrls.scene_99,
+    next: "scene_100",
+    type: "custom99",
+    format: "image",
+    transition: "white-fade",
+  },
   scene_100: {
     next: "scene_101",
     type: "custom100",
@@ -112,6 +126,13 @@ export const CustomScenes: ScenesDataType = {
   scene_104: {
     next: "scene_105",
     type: "custom104",
+    format: "image",
+    transition: "white-fade",
+  },
+  scene_110: {
+    src: SceneUrls.scene_110,
+    next: "scene_111",
+    type: "custom110",
     format: "image",
     transition: "white-fade",
   },

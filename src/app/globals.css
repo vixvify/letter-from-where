@@ -66,6 +66,11 @@ body {
   .animate-fade-out {
     animation: fade-out 1s linear forwards;
   }
+
+  .animate-fade-in-flash {
+    animation: fade-in 0.3s ease-in-out forwards;
+  }
+
   .animate-fade-in-common {
     animation: fade-in 1s linear forwards;
   }

@@ -13,9 +13,9 @@ export default function Custom28({ scene, goTo }: SceneProps) {
   const { data } = useFormStore();
 
   const choiceMap: Record<string, string | undefined> = {
-    A: SceneUrls["society_scary"],
-    B: SceneUrls["society_excited"],
-    C: SceneUrls["society_boring"],
+    A: SceneUrls["society_scary_cu"],
+    B: SceneUrls["society_excited_cu"],
+    C: SceneUrls["society_boring_cu"],
   };
 
   const selected = data.scene_18;
