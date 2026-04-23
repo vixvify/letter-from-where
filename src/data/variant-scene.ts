@@ -32,7 +32,7 @@ export const VariantScenes: ScenesDataType = {
   scene_21: {
     src: SceneUrls.scene_21,
     next: "scene_28",
-    text: SceneText.scene_21,
+    text: "",
     type: "common",
     format: "video",
     transition: "white-fade",
@@ -41,7 +41,7 @@ export const VariantScenes: ScenesDataType = {
   scene_24: {
     src: SceneUrls.scene_24,
     next: "scene_28",
-    text: SceneText.scene_24,
+    text: "",
     type: "common",
     format: "video",
     transition: "white-fade",
@@ -50,7 +50,7 @@ export const VariantScenes: ScenesDataType = {
   scene_27: {
     src: SceneUrls.scene_27,
     next: "scene_28",
-    text: SceneText.scene_27,
+    text: "",
     type: "common",
     format: "video",
     transition: "white-fade",
