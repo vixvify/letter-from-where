@@ -1,11 +1,13 @@
+"use client";
+
 import { SceneProps } from "@/core/domain/scene";
-import { useState } from "react";
 import { handleNext } from "@/utils/scene";
+import { useState } from "react";
 
-const SCENE_37_1 = process.env.NEXT_PUBLIC_URL_SCENE_37_1!;
-const SCENE_37_2 = process.env.NEXT_PUBLIC_URL_SCENE_37_2!;
+const SCENE_6_1 = process.env.NEXT_PUBLIC_URL_SCENE_6_1!;
+const SCENE_6_2 = process.env.NEXT_PUBLIC_URL_SCENE_6_2!;
 
-export default function Custom37({
+export default function Custom6({
   scene,
   goTo,
   onLoadingComplate,
@@ -23,25 +25,27 @@ export default function Custom37({
       });
     }
   };
+
   return (
     <div
       className="relative w-full h-screen overflow-hidden bg-black"
       onClick={handleClick}
     >
       <img
-        src={SCENE_37_1}
+        src={SCENE_6_1}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
           step === 0 ? "opacity-100" : "opacity-0"
         }`}
+        alt="bg"
         onLoad={() => onLoadingComplate?.(true)}
       />
 
       <img
-        src={SCENE_37_2}
+        src={SCENE_6_2}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
           step === 1 ? "opacity-100" : "opacity-0"
         }`}
-        onLoad={() => onLoadingComplate?.(true)}
+        alt="bg"
       />
     </div>
   );
