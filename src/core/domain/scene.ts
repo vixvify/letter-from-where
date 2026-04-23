@@ -18,6 +18,7 @@ export type Scene = {
   inputField?: string;
   buttonText?: string;
   transition: TransitionType;
+  loop?: boolean;
 };
 
 export type ScenesDataType = {

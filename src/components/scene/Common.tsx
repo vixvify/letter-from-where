@@ -55,7 +55,7 @@ export function CommonScene({ scene, goTo, onLoadingComplate }: SceneProps) {
             className="absolute inset-0 object-cover w-full h-full "
             autoPlay
             muted
-            loop
+            loop={scene.loop}
             playsInline
             onLoadedData={() => onLoadingComplate?.(true)}
           ></video>

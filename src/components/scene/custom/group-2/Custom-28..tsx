@@ -7,7 +7,11 @@ import { useFormStore } from "@/store/data";
 import { SceneUrls } from "@/data/video-url";
 import { getCachedImage } from "@/lib/image-cache";
 
-export default function Custom28({ scene, goTo }: SceneProps) {
+export default function Custom28({
+  scene,
+  goTo,
+  onLoadingComplate,
+}: SceneProps) {
   const [step, setStep] = useState(0);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const { data } = useFormStore();
@@ -48,7 +52,12 @@ export default function Custom28({ scene, goTo }: SceneProps) {
         handleClick();
       }}
     >
-      <img src={cached?.src || imageSrc} alt="bg" className="w-full h-screen" />
+      <img
+        src={cached?.src || imageSrc}
+        alt="bg"
+        className="w-full h-screen"
+        onLoad={() => onLoadingComplate?.(true)}
+      />
       {step === 0 && (
         <h1
           className={`absolute inset-0 z-10 flex items-center justify-center text-[18px] text-center font-bold text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] ${isFadingOut ? "animate-fade-out" : "animate-fade-in"}`}
