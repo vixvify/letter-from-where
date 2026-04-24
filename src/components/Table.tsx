@@ -9,10 +9,15 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-
+import Button from "./Button";
+import downloadCSV from "@/utils/download-csv";
 import { ICreateData } from "@/core/domain/data";
 
 export default function DataTable({ data }: { data: ICreateData[] }) {
+  const handleDownload = () => {
+    downloadCSV(data, "data.csv");
+  };
+
   return (
     <TableContainer
       component={Paper}
@@ -116,6 +121,9 @@ export default function DataTable({ data }: { data: ICreateData[] }) {
             </TableRow>
           ))}
         </TableBody>
+        <Button className="fixed mb-10 right-3 mt-7" onClick={handleDownload}>
+          download
+        </Button>
       </Table>
     </TableContainer>
   );
