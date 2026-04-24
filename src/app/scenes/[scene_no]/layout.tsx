@@ -19,7 +19,7 @@ export default function ScenesLayout({
     <div
       className={`${sarabun.className} flex justify-center items-center min-h-dvh overflow-hidden bg-black`}
     >
-      <div className="relative w-full overflow-hidden bg-white max-w-120 min-h-dvh">
+      <div className="relative w-full overflow-hidden bg-white max-w-134 min-h-dvh">
         <RouteSoundManager />
         <TransitionOverlay />
         {children}
