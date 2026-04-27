@@ -16,7 +16,7 @@ export default function RouteSoundManager() {
     if (!enabled) return;
 
     if (pathname.startsWith("/scenes/scene_4")) {
-      stop("bgm", { fadeOut: 1500 });
+      stop("bgm", { fadeOut: 4000 });
 
       return;
     }

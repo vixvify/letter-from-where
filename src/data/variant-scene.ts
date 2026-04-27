@@ -35,7 +35,7 @@ export const VariantScenes: ScenesDataType = {
     text: "",
     type: "common",
     format: "video",
-    transition: "white-fade",
+    transition: "black-fade",
     loop: true,
   },
   scene_24: {
@@ -44,7 +44,7 @@ export const VariantScenes: ScenesDataType = {
     text: "",
     type: "common",
     format: "video",
-    transition: "white-fade",
+    transition: "black-fade",
     loop: true,
   },
   scene_27: {
@@ -53,7 +53,7 @@ export const VariantScenes: ScenesDataType = {
     text: "",
     type: "common",
     format: "video",
-    transition: "white-fade",
+    transition: "black-fade",
     loop: true,
   },
   scene_29: {
@@ -62,7 +62,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_29,
     type: "choice",
     format: "image",
-    transition: "white-fade",
+    transition: "black-fade",
     choice: {
       A: "มี",
       B: "ไม่มี",
@@ -80,7 +80,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_30,
     type: "input",
     format: "image",
-    transition: "white-fade",
+    transition: "black-fade",
     inputField: "scene_30",
   },
   scene_32: {
@@ -89,7 +89,7 @@ export const VariantScenes: ScenesDataType = {
     text: "",
     type: "common",
     format: "video",
-    transition: "white-fade",
+    transition: "black-fade",
     loop: false,
   },
   scene_40: {
@@ -98,7 +98,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_40,
     type: "choice",
     format: "image",
-    transition: "white-fade",
+    transition: "black-fade",
     choice: {
       A: "ได้แน่นอน เก่งในแบบของหนูเอง",
       B: "พี่ไม่ได้เก่งอะไรเลย..แต่หนูจะทำได้",
@@ -116,7 +116,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_41,
     type: "input",
     format: "image",
-    transition: "white-fade",
+    transition: "black-fade",
     inputField: "scene_41",
   },
   scene_46: {
@@ -125,7 +125,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_46,
     type: "input",
     format: "image",
-    transition: "white-fade",
+    transition: "black-fade",
     inputField: "scene_46",
   },
   scene_50: {
@@ -134,7 +134,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_57,
     type: "common",
     format: "image",
-    transition: "white-fade",
+    transition: "black-fade",
   },
   scene_52: {
     src: undefined,
@@ -142,7 +142,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_52,
     type: "choice",
     format: "image",
-    transition: "white-fade",
+    transition: "black-fade",
     choice: {
       A: "ได้อยู่แล้ว",
       B: "ไม่แน่ใจ",
@@ -160,7 +160,7 @@ export const VariantScenes: ScenesDataType = {
     text: "",
     type: "common",
     format: "video",
-    transition: "white-fade",
+    transition: "black-fade",
     loop: true,
   },
   scene_70: {
@@ -169,7 +169,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_70,
     type: "input",
     format: "image",
-    transition: "white-fade",
+    transition: "black-fade",
     inputField: "scene_70",
   },
   scene_94: {
@@ -178,7 +178,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_94,
     type: "choice",
     format: "image",
-    transition: "white-fade",
+    transition: "black-fade",
     choice: {
       A: "เดินต่อไป",
       B: "หยุดรอซักหน่อย",

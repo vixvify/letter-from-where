@@ -5,6 +5,8 @@ import { useFormStore } from "@/store/data";
 import { useForm } from "react-hook-form";
 import Button from "../Button";
 import { ICreateData } from "@/core/domain/data";
+import { usePathname } from "next/navigation";
+import { bgColorMap } from "@/core/constants/color-map";
 
 export default function InputOverlay({ scene, goTo }: SceneProps) {
   const {
@@ -14,6 +16,9 @@ export default function InputOverlay({ scene, goTo }: SceneProps) {
   } = useForm<{ value: string }>({
     mode: "onChange",
   });
+
+  const pathname = usePathname();
+  const key = pathname.replace("/scenes/", "");
 
   const { setField } = useFormStore();
   const onSubmit = (data: { value: string }) => {
@@ -27,7 +32,9 @@ export default function InputOverlay({ scene, goTo }: SceneProps) {
     });
   };
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center">
+    <div
+      className={`absolute inset-0 flex flex-col items-center justify-center ${bgColorMap[key]}`}
+    >
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
         <h1 className="text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold">
           {scene.text}
