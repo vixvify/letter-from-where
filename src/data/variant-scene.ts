@@ -154,6 +154,15 @@ export const VariantScenes: ScenesDataType = {
       nextC: "scene_53",
     },
   },
+  scene_61: {
+    src: SceneUrls.scene_61,
+    next: "scene_62",
+    text: "",
+    type: "common",
+    format: "video",
+    transition: "white-fade",
+    loop: true,
+  },
   scene_70: {
     src: undefined,
     next: "scene_71",
