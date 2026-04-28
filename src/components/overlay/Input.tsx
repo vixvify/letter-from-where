@@ -36,7 +36,7 @@ export default function InputOverlay({ scene, goTo }: SceneProps) {
       className={`absolute inset-0 flex flex-col items-center justify-center ${bgColorMap[key]}`}
     >
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
-        <h1 className="text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold">
+        <h1 className="text-[18px] text-center text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] whitespace-pre-line leading-10 font-bold">
           {scene.text}
         </h1>
         <TextField
