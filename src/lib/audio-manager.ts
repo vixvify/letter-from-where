@@ -14,6 +14,13 @@ export default function RouteSoundManager() {
 
   useEffect(() => {
     if (!enabled) return;
+    if (pathname.startsWith("/scenes/scene_11") && AudioUrls["run"]) {
+      play("ambient", AudioUrls["run"], {
+        fadeIn: 4000,
+        loop: true,
+        volume: 1,
+      });
+    }
     if (pathname.startsWith("/scenes/scene_12") && AudioUrls["rain"]) {
       play("ambient", AudioUrls["rain"], {
         fadeIn: 4000,

@@ -6,13 +6,13 @@ export const CustomScenes: ScenesDataType = {
     next: "scene_2",
     type: "custom1",
     format: "image",
-    transition: "black-fade",
+    transition: "white-fade",
   },
   scene_2: {
     next: "scene_3",
     type: "custom2",
     format: "image",
-    transition: "black-fade",
+    transition: "white-fade",
   },
   scene_3: {
     next: "scene_4",
