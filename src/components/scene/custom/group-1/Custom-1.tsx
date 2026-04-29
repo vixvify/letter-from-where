@@ -14,7 +14,7 @@ export default function Custom1({ scene, goTo }: SceneProps) {
       play("bgm", AudioUrls["music"], {
         fadeIn: 1500,
         loop: true,
-        volume: 0.5,
+        volume: 0.2,
       });
     }
     handleNext({

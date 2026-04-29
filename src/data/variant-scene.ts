@@ -124,7 +124,7 @@ export const VariantScenes: ScenesDataType = {
   },
   scene_30: {
     src: undefined,
-    next: "scene_32",
+    next: "scene_31",
     text: SceneText.scene_30,
     type: "input",
     format: "image",
