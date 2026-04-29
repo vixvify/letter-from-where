@@ -8,10 +8,14 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-
+import Button from "./Button";
+import downloadCSV from "@/utils/download-csv";
 import { ICreateData } from "@/core/domain/data";
 
 export default function DataTable({ data }: { data: ICreateData[] }) {
+  const handleDownload = () => {
+    downloadCSV(data, "data.csv");
+  };
   const total = data.length;
 
   const scene94Stats = data.reduce(
@@ -107,6 +111,7 @@ export default function DataTable({ data }: { data: ICreateData[] }) {
           <div style={{ fontSize: 12, color: "#6366f1" }}>คำตอบที่มากกว่า</div>
           <div style={{ fontSize: 18, fontWeight: 600 }}>{moreAnswer}</div>
         </div>
+        <Button onClick={handleDownload}>download</Button>
       </div>
 
       <div
