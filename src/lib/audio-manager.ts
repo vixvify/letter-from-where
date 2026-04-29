@@ -22,40 +22,40 @@ export default function RouteSoundManager() {
       });
     }
     if (pathname.startsWith("/scenes/scene_15")) {
-      stop("ambient", { fadeOut: 1500 });
+      stop("ambient", { fadeOut: 4000 });
 
       return;
     }
     if (pathname.startsWith("/scenes/scene_63") && AudioUrls["rain"]) {
       play("ambient", AudioUrls["rain"], {
-        fadeIn: 1500,
+        fadeIn: 4000,
         loop: true,
       });
     }
     if (pathname.startsWith("/scenes/scene_65")) {
-      stop("ambient", { fadeOut: 5000 });
+      stop("ambient", { fadeOut: 4000 });
 
       return;
     }
     if (pathname.startsWith("/scenes/scene_90") && AudioUrls["rain"]) {
       play("ambient", AudioUrls["rain"], {
-        fadeIn: 1500,
+        fadeIn: 4000,
         loop: true,
       });
     }
     if (pathname.startsWith("/scenes/scene_95")) {
-      stop("ambient", { fadeOut: 1500 });
+      stop("ambient", { fadeOut: 4000 });
 
       return;
     }
     if (pathname.startsWith("/scenes/scene_102") && AudioUrls["rain"]) {
       play("ambient", AudioUrls["rain"], {
-        fadeIn: 1500,
+        fadeIn: 4000,
         loop: true,
       });
     }
     if (pathname.startsWith("/scenes/scene_106")) {
-      stop("ambient", { fadeOut: 1500 });
+      stop("ambient", { fadeOut: 4000 });
 
       return;
     }

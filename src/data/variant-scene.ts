@@ -175,6 +175,22 @@ export const VariantScenes: ScenesDataType = {
     transition: "scene_41",
     inputField: "scene_41",
   },
+  scene_43: {
+    src: SceneUrls.scene_43,
+    next: "scene_44",
+    text: "",
+    type: "common",
+    format: "image",
+    transition: "scene_44",
+  },
+  scene_45: {
+    src: SceneUrls.scene_45,
+    next: "scene_46",
+    text: "",
+    type: "common",
+    format: "image",
+    transition: "scene_46",
+  },
   scene_46: {
     src: undefined,
     next: "scene_47",
@@ -209,6 +225,14 @@ export const VariantScenes: ScenesDataType = {
       nextB: "scene_53",
       nextC: "scene_53",
     },
+  },
+  scene_58: {
+    src: SceneUrls.scene_58,
+    next: "scene_59",
+    text: SceneText.scene_58,
+    type: "common",
+    format: "image",
+    transition: "scene_57",
   },
   scene_61: {
     src: SceneUrls.scene_61,

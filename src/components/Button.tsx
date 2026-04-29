@@ -42,13 +42,31 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={isDisabled}
-      className={`px-8 py-2 mt-4 rounded-md transition
-        ${
-          isDisabled
-            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-            : "bg-gray-300 hover:bg-gray-400 text-black cursor-pointer"
-        }
-        ${className}`}
+      className={`
+      px-5 py-2 mt-4 rounded-xl
+      font-bold
+      transition-all duration-200
+
+      ${
+        isDisabled
+          ? "bg-white/20 text-white/40 cursor-not-allowed"
+          : `
+            bg-white/70 backdrop-blur-md
+            border border-white/30
+            text-gray-800
+
+            shadow-[0_6px_20px_rgba(0,0,0,0.15)]
+
+            hover:bg-white/80
+            active:scale-95
+            active:shadow-[0_3px_10px_rgba(0,0,0,0.2)]
+
+            cursor-pointer
+          `
+      }
+
+      ${className}
+    `}
     >
       {children}
     </button>
