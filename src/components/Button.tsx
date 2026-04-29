@@ -28,7 +28,7 @@ export default function Button({
       <button
         type={type}
         onClick={onClick}
-        className={`mt-10 text-gray-900 underline transition cursor-pointer hover:text-black ${className}`}
+        className={`text-gray-900 underline transition cursor-pointer hover:text-black ${className}`}
       >
         {children}
       </button>
