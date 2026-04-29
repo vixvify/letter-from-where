@@ -3,7 +3,13 @@ import { useState } from "react";
 import Button from "@/components/Button";
 import { handleNext } from "@/utils/scene";
 
-export default function Custom14({ scene, goTo }: SceneProps) {
+const SCENE_14 = process.env.NEXT_PUBLIC_URL_SCENE_14!;
+
+export default function Custom14({
+  scene,
+  goTo,
+  onLoadingComplate,
+}: SceneProps) {
   const [step, setStep] = useState(0);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
@@ -45,14 +51,14 @@ export default function Custom14({ scene, goTo }: SceneProps) {
       onClick={handleClick}
     >
       <video
+        src={SCENE_14}
         autoPlay
         loop
         muted
         playsInline
         className="absolute inset-0 object-cover w-full h-full"
-      >
-        <source src="/bg.mp4" type="video/mp4" />
-      </video>
+        onLoadedData={() => onLoadingComplate?.(true)}
+      ></video>
       {step === 2 ? (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-6">
           <h1

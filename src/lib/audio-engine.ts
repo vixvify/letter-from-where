@@ -1,12 +1,17 @@
 type Channel = "bgm" | "ambient" | "sfx";
 
+type ChannelState = {
+  audio: HTMLAudioElement;
+  src: string;
+};
+
 type PlayOptions = {
   fadeIn?: number;
   loop?: boolean;
   volume?: number;
 };
 
-const channels: Record<Channel, HTMLAudioElement | null> = {
+const channels: Record<Channel, ChannelState | null> = {
   bgm: null,
   ambient: null,
   sfx: null,
@@ -37,42 +42,42 @@ const fade = (
 };
 
 export const play = (channel: Channel, src: string, options?: PlayOptions) => {
-  // const current = channels[channel];
+  const current = channels[channel];
 
-  // if (current) {
-  //   fade(current, current.volume, 0, options?.fadeIn ?? 800);
-  //   setTimeout(() => current.pause(), options?.fadeIn ?? 800);
-  // }
+  if (current && current.src === src) {
+    return;
+  }
 
-  // const audio = new Audio(src);
-  // audio.loop = options?.loop ?? true;
-  // const targetVolume = options?.volume ?? 1;
-  // audio.volume = 0;
-  // audio.play();
-
-  // fade(audio, 0, targetVolume, options?.fadeIn ?? 800);
-
-  // channels[channel] = audio;
-
-  console.log("PLAY:", src);
+  if (current) {
+    fade(current.audio, current.audio.volume, 0, options?.fadeIn ?? 800);
+    setTimeout(() => current.audio.pause(), options?.fadeIn ?? 800);
+  }
 
   const audio = new Audio(src);
   audio.loop = options?.loop ?? true;
-  audio.volume = 1;
 
-  audio.play().catch((err) => {
-    console.error("PLAY ERROR:", err);
-  });
+  const targetVolume = options?.volume ?? 1;
+  audio.volume = 0;
 
-  channels[channel] = audio;
+  audio.play().catch(console.error);
+
+  fade(audio, 0, targetVolume, options?.fadeIn ?? 800);
+
+  channels[channel] = { audio, src };
 };
 
 export const stop = (channel: Channel, options?: { fadeOut?: number }) => {
   const current = channels[channel];
   if (!current) return;
 
-  fade(current, current.volume, 0, options?.fadeOut ?? 800);
-  setTimeout(() => current.pause(), options?.fadeOut ?? 800);
+  const duration = options?.fadeOut ?? 800;
+
+  fade(current.audio, current.audio.volume, 0, duration);
+
+  setTimeout(() => {
+    current.audio.pause();
+    current.audio.currentTime = 0;
+  }, duration);
 
   channels[channel] = null;
 };

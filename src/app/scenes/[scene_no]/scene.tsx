@@ -10,6 +10,7 @@ import { preloadImage, preloadVideo } from "@/lib/image-cache";
 import { CustomSceneWithImage } from "@/core/constants/scene";
 import { usePathname } from "next/navigation";
 import { ScenesData } from "@/data/story";
+import { useAudioStore } from "@/store/audio";
 
 type SceneProps = {
   scene: Scene;
@@ -22,6 +23,7 @@ export default function SceneClient({ scene }: SceneProps) {
   const transition = useTransitionStore((s) => s.transition);
   const setTransition = useTransitionStore((s) => s.setTransition);
   const [loading, setLoading] = useState(false);
+  const enable = useAudioStore((s) => s.enable);
 
   const setLoadingComplete = (status: boolean) => {
     setLoading(status);
@@ -63,6 +65,12 @@ export default function SceneClient({ scene }: SceneProps) {
         goTo={goTo}
         onLoadingComplate={setLoadingComplete}
       />
+      {/* <button
+        className="absolute px-4 py-2 text-white bg-blue-500 rounded cursor-pointer bottom-4 right-4"
+        onClick={() => enable()}
+      >
+        Enable Sound (Development Only)
+      </button> */}
     </>
   );
 }

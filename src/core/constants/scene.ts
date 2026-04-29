@@ -79,6 +79,7 @@ export const SceneOverlayMap = {
 
 export const CustomSceneWithImage = [
   "scene_6",
+  "scene_14",
   "scene_28",
   "scene_37",
   "scene_48",
@@ -87,4 +88,6 @@ export const CustomSceneWithImage = [
   "scene_63",
   "scene_65",
   "scene_66",
+  "scene_99",
+  "scene_100",
 ];

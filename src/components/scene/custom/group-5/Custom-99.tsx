@@ -17,7 +17,7 @@ export default function Custom99({
   };
 
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center gap-20">
+    <div className="absolute inset-0 flex flex-col items-center justify-center gap-20 bg-[radial-gradient(circle_at_30%_60%,#f59e0b_0%,#ea580c_40%,#7c2d12_70%,#2a0e05_100%)]">
       <img
         src={scene.src}
         width="350"
@@ -26,7 +26,7 @@ export default function Custom99({
         onLoad={() => onLoadingComplate?.(true)}
       />
       <h1
-        className="text-[17px] text-center text-black whitespace-pre-line font-bold cursor-pointer"
+        className="text-[18px] text-center text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] whitespace-pre-line font-bold cursor-pointer"
         onClick={handleEnter}
       >
         กดเพื่ออ่าน
