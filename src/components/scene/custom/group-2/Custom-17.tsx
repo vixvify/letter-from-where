@@ -20,17 +20,17 @@ export default function Custom17({ scene, goTo }: SceneProps) {
 
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center "
+      className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_50%_10%,#4b5563_0%,#374151_30%,#111827_60%,#020617_100%)]"
       onClick={handleClick}
     >
       <div className="relative text-center -translate-y-6">
-        <h1 className="text-[17px] text-black leading-10 font-bold">
+        <h1 className="text-[18px] text-center text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] leading-10 font-bold">
           ที่นี่... <br />
           ไม่ใช่ที่ที่คุณรู้จัก
         </h1>
 
         {step >= 1 && (
-          <div className="absolute left-0 right-0 mt-2 font-bold animate-fade-in text-[17px]">
+          <div className="absolute left-0 right-0 mt-2 font-bold animate-fade-in text-[18px] text-center text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] leading-10">
             ไม่คุ้นเคยเลย...
           </div>
         )}

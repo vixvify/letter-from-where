@@ -5,6 +5,7 @@ import { handleNext } from "@/utils/scene";
 import { useFormStore } from "@/store/data";
 import { usePathname } from "next/navigation";
 import { ICreateData } from "@/core/domain/data";
+import { bgColorMap } from "@/core/constants/color-map";
 
 export default function ChoicesOverlay({ scene, goTo }: SceneProps) {
   const { setField } = useFormStore();
@@ -20,9 +21,11 @@ export default function ChoicesOverlay({ scene, goTo }: SceneProps) {
   };
   if (scene && scene.choice) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center ">
+      <div
+        className={`absolute inset-0 flex items-center justify-center ${bgColorMap[key]}`}
+      >
         <div className="flex flex-col items-center justify-center ">
-          <h1 className="text-[17px] font-bold text-black whitespace-pre-line leading-10 text-center">
+          <h1 className="text-[18px] text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] whitespace-pre-line leading-10 text-center font-bold">
             {scene.text}
           </h1>
           <div className="flex flex-col items-stretch justify-center gap-3 mt-5 w-max">

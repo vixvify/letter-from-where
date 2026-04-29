@@ -1,7 +1,7 @@
 "use client";
 
 import { useTransitionStore } from "@/store/transition";
-import { transitionFadeTypeMap } from "@/core/constants/fade-transition";
+import { getTransitionBg } from "@/lib/get-transition-bg";
 
 export default function TransitionOverlay() {
   const transition = useTransitionStore((s) => s.transition);
@@ -11,10 +11,8 @@ export default function TransitionOverlay() {
 
   const { type, phase } = transition;
 
-  if (!(type in transitionFadeTypeMap)) return null;
-
   const base = "absolute inset-0 z-[999] pointer-events-none";
-  const bg = transitionFadeTypeMap[type as keyof typeof transitionFadeTypeMap];
+  const bg = getTransitionBg(type);
   const anim =
     phase === "between"
       ? ""

@@ -22,16 +22,16 @@ export default function Custom83({ scene, goTo }: SceneProps) {
   };
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center"
+      className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]"
       onClick={handleClick}
     >
       <div className="flex flex-col items-center justify-center gap-10">
-        <h1 className="text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold">
+        <h1 className="text-[18px] text-center text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] whitespace-pre-line leading-10 font-bold">
           {`ตลอด ${data.age} ปี 
 ที่เราโตขึ้นได้ขนาดนี้`}
         </h1>
         <h1
-          className={`text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold transition-opacity duration-500 ${
+          className={`text-[18px] text-center text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] whitespace-pre-line leading-10 font-bold transition-opacity duration-500 ${
             step >= 1 ? "opacity-100 animate-fade-in" : "opacity-0"
           }`}
         >
@@ -39,7 +39,7 @@ export default function Custom83({ scene, goTo }: SceneProps) {
 และพยายามมาตลอด`}
         </h1>
         <h1
-          className={`text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold transition-opacity duration-500 ${
+          className={`text-[18px] text-center text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] whitespace-pre-line leading-10 font-bold transition-opacity duration-500 ${
             step >= 2 ? "opacity-100 animate-fade-in" : "opacity-0"
           }`}
         >
