@@ -17,7 +17,7 @@ export default function Custom110({
   };
 
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center gap-20">
+    <div className="absolute inset-0 flex flex-col items-center justify-center gap-20 bg-[radial-gradient(circle_at_50%_60%,#d6b98b_0%,#8b6b4a_35%,#374151_65%,#020617_100%)]">
       <img
         src={scene.src}
         width="350"
@@ -26,7 +26,7 @@ export default function Custom110({
         onLoad={() => onLoadingComplate?.(true)}
       />
       <h1
-        className="text-[17px] text-center text-black whitespace-pre-line font-bold cursor-pointer"
+        className="text-[18px] text-center text-white [text-shadow:0_3px_10px_rgba(0,0,0,1)] whitespace-pre-line font-bold cursor-pointer"
         onClick={handleEnter}
       >
         กดเพื่ออ่าน

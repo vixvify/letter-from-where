@@ -7,6 +7,8 @@ export const bgColorMap: Record<string, string> = {
   scene_10: "bg-gradient-to-br from-[#120603] via-[#5A1E0E] to-[#C2410C]",
   scene_12:
     "bg-[radial-gradient(circle_at_70%_50%,#3b2a24_0%,#1a1a1a_50%,#020617_100%)]",
+  scene_13:
+    "bg-[radial-gradient(circle_at_50%_20%,#1e3a66_0%,#0f172a_50%,#020617_100%)]",
   scene_16:
     "bg-[radial-gradient(circle_at_50%_10%,#4b5563_0%,#374151_30%,#111827_60%,#020617_100%)]",
   scene_18:
@@ -79,4 +81,27 @@ export const bgColorMap: Record<string, string> = {
     "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
   scene_89:
     "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_90:
+    "bg-[radial-gradient(circle_at_50%_85%,#4b5563_0%,#1f2937_50%,#000000_100%)]",
+  scene_93:
+    "bg-[radial-gradient(circle_at_50%_85%,#4b5563_0%,#1f2937_50%,#000000_100%)]",
+  scene_94:
+    "bg-[radial-gradient(circle_at_50%_85%,#4b5563_0%,#1f2937_50%,#000000_100%)]",
+  scene_95:
+    "bg-[radial-gradient(circle_at_50%_85%,#4b5563_0%,#1f2937_50%,#000000_100%)]",
+  scene_97:
+    "bg-[radial-gradient(circle_at_30%_60%,#f59e0b_0%,#ea580c_40%,#7c2d12_70%,#2a0e05_100%)]",
+  scene_98:
+    "bg-[radial-gradient(circle_at_30%_60%,#f59e0b_0%,#ea580c_40%,#7c2d12_70%,#2a0e05_100%)]",
+  scene_102:
+    "bg-[radial-gradient(circle_at_50%_85%,#4b5563_0%,#1f2937_50%,#000000_100%)]",
+  scene_104:
+    "bg-[radial-gradient(circle_at_70%_35%,rgba(255,200,100,0.35)_0%,rgba(255,200,100,0.15)_25%,transparent_45%),radial-gradient(circle_at_50%_20%,#1f2937_0%,#0f172a_50%,#020617_100%)]",
+  scene_106:
+    "bg-[radial-gradient(circle_at_70%_35%,rgba(255,200,100,0.35)_0%,rgba(255,200,100,0.15)_25%,transparent_45%),radial-gradient(circle_at_50%_20%,#1f2937_0%,#0f172a_50%,#020617_100%)]",
+
+  scene_109:
+    "bg-[radial-gradient(circle_at_50%_60%,#d6b98b_0%,#8b6b4a_35%,#374151_65%,#020617_100%)]",
+  scene_110:
+    "bg-[radial-gradient(circle_at_50%_60%,#d6b98b_0%,#8b6b4a_35%,#374151_65%,#020617_100%)]",
 };
