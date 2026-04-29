@@ -11,6 +11,14 @@ export const VariantScenes: ScenesDataType = {
     format: "image",
     transition: "black-fade",
   },
+  scene_11: {
+    src: SceneUrls.scene_11,
+    next: "scene_12",
+    text: "",
+    type: "common",
+    format: "video",
+    transition: "black-fade",
+  },
   scene_18: {
     src: SceneUrls.scene_18,
     next: null,
@@ -130,8 +138,8 @@ export const VariantScenes: ScenesDataType = {
   },
   scene_50: {
     src: undefined,
-    next: "scene_57",
-    text: SceneText.scene_57,
+    next: "scene_51",
+    text: SceneText.scene_50,
     type: "common",
     format: "image",
     transition: "black-fade",
@@ -171,6 +179,14 @@ export const VariantScenes: ScenesDataType = {
     format: "image",
     transition: "black-fade",
     inputField: "scene_70",
+  },
+  scene_89: {
+    src: undefined,
+    next: "scene_90",
+    text: SceneText.scene_89,
+    type: "common",
+    format: "image",
+    transition: "flash",
   },
   scene_94: {
     src: undefined,

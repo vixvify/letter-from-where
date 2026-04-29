@@ -1,10 +1,16 @@
 export const bgColorMap: Record<string, string> = {
-  scene_5: "bg-gradient-to-br from-[#1F0A04] via-[#6B1F0D] to-[#B45309]",
-  scene_7: "bg-gradient-to-br from-[#1F0A04] via-[#6B1F0D] to-[#B45309]",
+  scene_5:
+    "bg-[radial-gradient(circle_at_60%_50%,#f59e0b_0%,#ea580c_35%,#7c2d12_65%,#2a0e05_100%)]",
+  scene_7:
+    "bg-[radial-gradient(circle_at_60%_50%,#f59e0b_0%,#ea580c_35%,#7c2d12_65%,#2a0e05_100%)]",
   scene_9: "bg-gradient-to-br from-[#120603] via-[#5A1E0E] to-[#C2410C]",
   scene_10: "bg-gradient-to-br from-[#120603] via-[#5A1E0E] to-[#C2410C]",
-  scene_16: "bg-gradient-to-b from-[#9ca3af] via-[#4b5563] to-[#030712]",
-  scene_18: "bg-gradient-to-b from-[#9ca3af] via-[#4b5563] to-[#030712]",
+  scene_12:
+    "bg-[radial-gradient(circle_at_70%_50%,#3b2a24_0%,#1a1a1a_50%,#020617_100%)]",
+  scene_16:
+    "bg-[radial-gradient(circle_at_50%_10%,#4b5563_0%,#374151_30%,#111827_60%,#020617_100%)]",
+  scene_18:
+    "bg-[radial-gradient(circle_at_50%_10%,#4b5563_0%,#374151_30%,#111827_60%,#020617_100%)]",
   scene_20:
     "bg-[radial-gradient(circle_at_50%_10%,#6366f1_0%,#312e81_40%,#0f172a_80%,#020617_100%)]",
   scene_23:
@@ -37,4 +43,40 @@ export const bgColorMap: Record<string, string> = {
     "bg-[radial-gradient(circle_at_50%_45%,#4c6fa3_0%,#2f4f7f_40%,#1e3a66_70%,#0b1e3a_100%)]",
   scene_47:
     "bg-[radial-gradient(circle_at_50%_45%,#4c6fa3_0%,#2f4f7f_40%,#1e3a66_70%,#0b1e3a_100%)]",
+  scene_50:
+    "bg-[radial-gradient(circle_at_50%_45%,#4c6fa3_0%,#2f4f7f_40%,#1e3a66_70%,#0b1e3a_100%)]",
+  scene_52:
+    "bg-[radial-gradient(circle_at_50%_45%,#4c6fa3_0%,#2f4f7f_40%,#1e3a66_70%,#0b1e3a_100%)]",
+  scene_53:
+    "bg-[radial-gradient(circle_at_50%_45%,#4c6fa3_0%,#2f4f7f_40%,#1e3a66_70%,#0b1e3a_100%)]",
+  scene_56:
+    "bg-[radial-gradient(circle_at_50%_45%,#4c6fa3_0%,#2f4f7f_40%,#1e3a66_70%,#0b1e3a_100%)]",
+  scene_57:
+    "bg-[radial-gradient(circle_at_50%_45%,#4c6fa3_0%,#2f4f7f_40%,#1e3a66_70%,#0b1e3a_100%)]",
+  scene_60:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_64:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_68:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_70:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_72:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_73:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_74:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_76:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_78:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_81:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_84:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_87:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
+  scene_89:
+    "bg-[radial-gradient(circle_at_65%_30%,rgba(255,220,120,0.45)_0%,rgba(255,220,120,0.2)_25%,transparent_45%),radial-gradient(circle_at_55%_40%,#8fb0d4_0%,#4a6b94_40%,#243f6b_70%,#06142c_100%)]",
 };

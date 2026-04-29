@@ -9,16 +9,20 @@ import Custom14 from "@/components/scene/custom/group-2/Custom-14";
 import Custom17 from "@/components/scene/custom/group-2/Custom-17";
 import Custom28 from "@/components/scene/custom/group-2/Custom-28.";
 import Custom34 from "@/components/scene/custom/group-2/Custom-34";
-import Custom37 from "@/components/scene/custom/group-3/Custom-37";
-import Custom48 from "@/components/scene/custom/group-3/Custom-48";
+import Custom37 from "@/components/scene/custom/group-2/Custom-37";
+import Custom48 from "@/components/scene/custom/group-2/Custom-48";
 import Custom51 from "@/components/scene/custom/group-3/Custom-51";
 import Custom54 from "@/components/scene/custom/group-3/Custom-54";
+import Custom59 from "@/components/scene/custom/group-3/Custom-59";
 import Custom62 from "@/components/scene/custom/group-3/Custom-62";
-import Custom69 from "@/components/scene/custom/group-3/Custom-69";
+import Custom63 from "@/components/scene/custom/group-3/Custom-63";
+import Custom65 from "@/components/scene/custom/group-3/Custom-65";
+import Custom66 from "@/components/scene/custom/group-4/Custom-66";
+import Custom69 from "@/components/scene/custom/group-4/Custom-69";
 import Custom83 from "@/components/scene/custom/group-4/Custom-83";
 import Custom85 from "@/components/scene/custom/group-4/Custom-85";
 import Custom86 from "@/components/scene/custom/group-4/Custom-86";
-import Custom91 from "@/components/scene/custom/group-4/Custom-91";
+import Custom91 from "@/components/scene/custom/group-5/Custom-91";
 import Custom97 from "@/components/scene/custom/group-5/Custom-97";
 import Custom99 from "@/components/scene/custom/group-5/Custom-99";
 import Custom100 from "@/components/scene/custom/group-5/Custom-100";
@@ -47,7 +51,11 @@ export const SceneComponentMap = {
   custom48: Custom48,
   custom51: Custom51,
   custom54: Custom54,
+  custom59: Custom59,
   custom62: Custom62,
+  custom63: Custom63,
+  custom65: Custom65,
+  custom66: Custom66,
   custom69: Custom69,
   custom83: Custom83,
   custom85: Custom85,
@@ -75,4 +83,8 @@ export const CustomSceneWithImage = [
   "scene_37",
   "scene_48",
   "scene_54",
+  "scene_59",
+  "scene_63",
+  "scene_65",
+  "scene_66",
 ];

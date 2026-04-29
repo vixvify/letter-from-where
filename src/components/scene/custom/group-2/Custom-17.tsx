@@ -20,7 +20,7 @@ export default function Custom17({ scene, goTo }: SceneProps) {
 
   return (
     <div
-      className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-[#9ca3af] via-[#4b5563] to-[#030712]"
+      className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_50%_10%,#4b5563_0%,#374151_30%,#111827_60%,#020617_100%)]"
       onClick={handleClick}
     >
       <div className="relative text-center -translate-y-6">
