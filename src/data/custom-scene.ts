@@ -24,7 +24,7 @@ export const CustomScenes: ScenesDataType = {
     next: "scene_7",
     type: "custom6",
     format: "image",
-    transition: "black-fade",
+    transition: "scene_5",
   },
   scene_14: {
     next: "scene_15",

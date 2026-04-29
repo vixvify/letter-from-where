@@ -17,7 +17,7 @@ const CommonScenes: ScenesDataType = Object.fromEntries(
         text: SceneText[key as keyof typeof SceneText],
         type: "common",
         format: "image",
-        transition: "black-fade",
+        transition: `scene_${id}`,
       },
     ];
   }),

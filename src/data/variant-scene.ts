@@ -9,7 +9,7 @@ export const VariantScenes: ScenesDataType = {
     text: SceneText.scene_4,
     type: "common",
     format: "image",
-    transition: "black-fade",
+    transition: "scene_5",
   },
   scene_11: {
     src: SceneUrls.scene_11,

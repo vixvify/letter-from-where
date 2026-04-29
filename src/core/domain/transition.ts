@@ -3,4 +3,5 @@ export type TransitionType =
   | "black-fade"
   | "blink"
   | "cut"
-  | "flash";
+  | "flash"
+  | `scene_${number}`;
