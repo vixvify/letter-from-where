@@ -3,7 +3,7 @@
 import { SceneProps } from "@/core/domain/scene";
 import { handleNext } from "@/utils/scene";
 
-const SCENE_66 = process.env.NEXT_PUBLIC_URL_SCENE_65!;
+const SCENE_66 = process.env.NEXT_PUBLIC_URL_SCENE_66!;
 
 export default function Custom66({
   scene,
