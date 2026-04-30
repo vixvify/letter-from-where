@@ -49,7 +49,7 @@ export default function Button({
 
       ${
         isDisabled
-          ? "bg-white/20 text-white/40 cursor-not-allowed"
+          ? "bg-gray-300 text-white/40 cursor-not-allowed"
           : `
             bg-white/70 backdrop-blur-md
             border border-white/30
