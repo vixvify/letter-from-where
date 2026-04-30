@@ -16,14 +16,14 @@ export default function RouteSoundManager() {
     if (!enabled) return;
     if (pathname.startsWith("/scenes/scene_11") && AudioUrls["run"]) {
       play("ambient", AudioUrls["run"], {
-        fadeIn: 4000,
-        loop: true,
+        fadeIn: 1000,
+        loop: false,
         volume: 1,
       });
     }
     if (pathname.startsWith("/scenes/scene_12") && AudioUrls["rain"]) {
       play("ambient", AudioUrls["rain"], {
-        fadeIn: 4000,
+        fadeIn: 5000,
         loop: true,
         volume: 1,
       });
@@ -35,7 +35,7 @@ export default function RouteSoundManager() {
     }
     if (pathname.startsWith("/scenes/scene_63") && AudioUrls["rain"]) {
       play("ambient", AudioUrls["rain"], {
-        fadeIn: 4000,
+        fadeIn: 17000,
         loop: true,
       });
     }
