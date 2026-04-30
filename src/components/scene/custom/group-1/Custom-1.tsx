@@ -1,32 +1,46 @@
+"use client";
+
 import { SceneProps } from "@/core/domain/scene";
 import Button from "@/components/Button";
 import { handleNext } from "@/utils/scene";
 import { useAudioStore } from "@/store/audio";
 import { AudioUrls } from "@/data/audio-url";
+import { useState } from "react";
 
 export default function Custom1({ scene, goTo }: SceneProps) {
   const play = useAudioStore((s) => s.play);
   const enable = useAudioStore((s) => s.enable);
 
-  const handleEnter = () => {
-    enable();
-    if (AudioUrls["music"]) {
-      play("bgm", AudioUrls["music"], {
-        fadeIn: 1500,
-        loop: true,
-        volume: 0.2,
+  const [step, setStep] = useState(0);
+
+  const handleClick = () => {
+    if (step === 0) {
+      setStep(1);
+    } else {
+      enable();
+      if (AudioUrls["music"]) {
+        play("bgm", AudioUrls["music"], {
+          fadeIn: 1500,
+          loop: true,
+          volume: 0.2,
+        });
+      }
+
+      handleNext({
+        next: scene.next,
+        transition: scene.transition,
+        goTo,
       });
     }
-    handleNext({
-      next: scene.next,
-      transition: scene.transition,
-      goTo,
-    });
   };
 
   return (
-    <div className="flex items-center justify-center w-full h-screen">
-      <div className="flex flex-col gap-10 text-center animate-fade-in-common">
+    <div className="relative flex items-center justify-center w-full h-screen overflow-hidden">
+      <div
+        className={`absolute flex flex-col gap-10 text-center transition-opacity duration-1500 ${
+          step === 0 ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
         <h1 className="text-xl font-bold">คำเตือน</h1>
 
         <div className="text-gray-800 leading-7 text-[12px] font-bold">
@@ -34,7 +48,7 @@ export default function Custom1({ scene, goTo }: SceneProps) {
           <p>เพื่อสำรวจและทำความเข้าใจตนเอง</p>
           <p>
             เกี่ยวกับภาวะ
-            <span className="font-semibold">Impostor Syndrome</span>
+            <span className="font-semibold"> Impostor Syndrome</span>
           </p>
 
           <p>ทางทีมผู้พัฒนาขออนุญาต เก็บข้อมูลเพื่อนำไปใช้ศึกษา</p>
@@ -50,7 +64,27 @@ export default function Custom1({ scene, goTo }: SceneProps) {
           <p>และควรดูแลจิตใจของตนเอง อย่างเหมาะสม</p>
         </div>
 
-        <Button variant="underline" onClick={handleEnter}>
+        <Button variant="underline" onClick={handleClick}>
+          ถัดไป
+        </Button>
+      </div>
+
+      <div
+        className={`absolute flex flex-col gap-10 text-center transition-opacity duration-1500 ${
+          step === 1 ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <h1 className="text-xl font-bold">คำเตือนเพิ่มเติม</h1>
+
+        <div className="text-gray-800 leading-7 text-[12px] font-bold">
+          <p className="mt-3">เนื้อหาบางส่วนอาจมีเอฟเฟกต์แสงไฟกระพริบ</p>
+          <p>ซึ่งอาจไม่เหมาะสำหรับผู้ที่ไวต่อแสง</p>
+
+          <p>หากคุณมีอาการไวต่อแสงหรือเคยมีประวัติการชักจากแสง</p>
+          <p>ควรหลีกเลี่ยงการเล่น หรือใช้ความระมัดระวัง</p>
+        </div>
+
+        <Button variant="underline" onClick={handleClick}>
           คลิกเพื่อเริ่ม
         </Button>
       </div>
