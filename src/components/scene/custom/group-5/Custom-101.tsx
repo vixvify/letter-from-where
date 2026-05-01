@@ -47,7 +47,7 @@ export default function Custom101() {
       if (navigator.canShare?.({ files: [file] })) {
         await navigator.share({
           files: [file],
-          title: "My Poster",
+          title: "https://letter-from-where-kappa.vercel.app",
         });
       } else {
         const url = URL.createObjectURL(blob);
@@ -112,8 +112,8 @@ export default function Custom101() {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center" ref={ref}>
-      <div className="flex flex-col items-center justify-center gap-10">
-        <h1 className="text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold">
+      <div className="flex flex-col items-center justify-center gap-6">
+        <h1 className="text-[15px] text-center text-black whitespace-pre-line leading-10 font-bold">
           จงโอบกอดโอกาสตรงหน้า <br /> เพราะมันคู่ควรกับ {name} ที่สุด
         </h1>
         <div
@@ -126,18 +126,18 @@ export default function Custom101() {
         >
           <img
             src="/poster-1.png"
-            width={150}
+            width={230}
             height={250}
             alt="poster"
             className="rounded-lg"
           />
         </div>
         <div>
-          <h1 className="text-[17px] text-center text-black whitespace-pre-line leading-10 font-bold">
+          <h1 className="text-[15px] text-center text-black whitespace-pre-line leading-10 font-bold">
             ขอบคุณที่เดินทางมาด้วยกันนะ
           </h1>
           <div className="flex justify-end">
-            <h1 className="text-[17px] text-center text-black font-bold">
+            <h1 className="text-[15px] text-center text-black font-bold">
               จาก..ที่ใดที่หนึ่ง
             </h1>
           </div>

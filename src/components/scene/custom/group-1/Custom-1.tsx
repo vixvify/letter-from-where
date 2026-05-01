@@ -37,13 +37,13 @@ export default function Custom1({ scene, goTo }: SceneProps) {
   return (
     <div className="relative flex items-center justify-center w-full h-screen overflow-hidden">
       <div
-        className={`absolute flex flex-col gap-10 text-center transition-opacity duration-1500 ${
+        className={`absolute flex flex-col gap-6 text-center transition-opacity duration-1500 ${
           step === 0 ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
         <h1 className="text-xl font-bold">คำเตือน</h1>
 
-        <div className="text-gray-800 leading-7 text-[12px] font-bold">
+        <div className="text-gray-800 leading-8 text-[13px] font-bold">
           <p>เนื้อหานี้ถูกออกแบบในรูปแบบเกม</p>
           <p>เพื่อสำรวจและทำความเข้าใจตนเอง</p>
           <p>
@@ -70,13 +70,13 @@ export default function Custom1({ scene, goTo }: SceneProps) {
       </div>
 
       <div
-        className={`absolute flex flex-col gap-10 text-center transition-opacity duration-1500 ${
+        className={`absolute flex flex-col gap-6 text-center transition-opacity duration-1500 ${
           step === 1 ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
         <h1 className="text-xl font-bold">คำเตือนเพิ่มเติม</h1>
 
-        <div className="text-gray-800 leading-7 text-[12px] font-bold">
+        <div className="text-gray-800 leading-8 text-[13px] font-bold">
           <p className="mt-3">เนื้อหาบางส่วนอาจมีเอฟเฟกต์แสงไฟกระพริบ</p>
           <p>ซึ่งอาจไม่เหมาะสำหรับผู้ที่ไวต่อแสง</p>
 
