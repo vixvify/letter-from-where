@@ -1,16 +1,18 @@
 "use client";
 
 import DataTable from "@/components/Table";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { authService, dataService } from "@/infra/container";
 import Swal from "sweetalert2";
 import { handleError } from "@/lib/error-handler";
-
-const data = await dataService.getData();
+import { IData } from "@/core/domain/data";
+import Loading from "./loading";
 
 export default function Page() {
   const [isOpen, setIsOpen] = useState(true);
   const [password, setPassword] = useState("");
+  const [data, setData] = useState<IData[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async () => {
     try {
@@ -26,6 +28,20 @@ export default function Page() {
       });
     }
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await dataService.getData();
+        setData(res);
+        setIsLoading(false);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   if (isOpen) {
     return (
@@ -52,6 +68,10 @@ export default function Page() {
         </div>
       </div>
     );
+  }
+
+  if (isLoading) {
+    return <Loading />;
   }
 
   return <DataTable data={data} />;
