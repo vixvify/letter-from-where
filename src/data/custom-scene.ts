@@ -1,5 +1,6 @@
 import { ScenesDataType } from "@/core/domain/scene";
 import { SceneUrls } from "./video-url";
+import { SceneText } from "@/core/constants/scene-text";
 
 export const CustomScenes: ScenesDataType = {
   scene_1: {
@@ -62,6 +63,13 @@ export const CustomScenes: ScenesDataType = {
     format: "image",
     transition: "scene_50",
   },
+  scene_50: {
+    next: "scene_51",
+    text: SceneText.scene_50,
+    type: "custom50",
+    format: "image",
+    transition: "scene_50",
+  },
   scene_51: {
     next: "scene_52",
     type: "custom51",
@@ -109,6 +117,12 @@ export const CustomScenes: ScenesDataType = {
     type: "custom69",
     format: "image",
     transition: "scene_70",
+  },
+  scene_79: {
+    next: "scene_81",
+    type: "custom79",
+    format: "image",
+    transition: "scene_81",
   },
   scene_83: {
     next: "scene_84",

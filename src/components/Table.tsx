@@ -10,9 +10,9 @@ import {
 } from "@mui/material";
 import Button from "./Button";
 import downloadCSV from "@/utils/download-csv";
-import { ICreateData } from "@/core/domain/data";
+import { IData } from "@/core/domain/data";
 
-export default function DataTable({ data }: { data: ICreateData[] }) {
+export default function DataTable({ data }: { data: IData[] }) {
   const handleDownload = () => {
     downloadCSV(data, "data.csv");
   };
