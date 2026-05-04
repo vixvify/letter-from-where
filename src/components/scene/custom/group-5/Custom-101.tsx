@@ -9,8 +9,10 @@ import { dataService } from "@/infra/container";
 import { parseSchema } from "@/lib/validation";
 import { createDataSchema } from "@/core/domain/data.schema";
 import { useEffect } from "react";
+import { handleNext } from "@/utils/scene";
+import { SceneProps } from "@/core/domain/scene";
 
-export default function Custom101() {
+export default function Custom101({ scene, goTo }: SceneProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { data } = useFormStore();
   const name = data.name;
@@ -111,44 +113,56 @@ export default function Custom101() {
   }, [isHydrated]);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center" ref={ref}>
-      <div className="flex flex-col items-center justify-center gap-6">
-        <h1 className="text-[15px] text-center text-black whitespace-pre-line leading-10 font-bold">
-          จงโอบกอดโอกาสตรงหน้า <br /> เพราะมันคู่ควรกับ {name} ที่สุด
-        </h1>
-        <div
-          className="relative"
-          style={{
-            transform: "rotate(3deg)",
-            borderRadius: "12px",
-            boxShadow: "0 10px 20px rgba(0,0,0,0.3)",
-          }}
-        >
-          <img
-            src="/poster-1.png"
-            width={230}
-            height={250}
-            alt="poster"
-            className="rounded-lg"
-          />
-        </div>
-        <div>
-          <h1 className="text-[15px] text-center text-black whitespace-pre-line leading-10 font-bold">
+    <div
+      className="absolute inset-0 flex items-center justify-center bg-center bg-no-repeat bg-cover"
+      ref={ref}
+      onClick={() =>
+        handleNext({
+          next: scene.next,
+          transition: scene.transition,
+          goTo,
+        })
+      }
+    >
+      <img
+        src="/bgpostcard.webp"
+        className="absolute inset-0 object-cover w-full h-full"
+        alt="poster"
+      />
+      <div className="absolute inset-0 flex flex-col items-center justify-end px-6 pb-8 lg:pb-25">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-[13px] lg:text-[15px] text-center text-white whitespace-pre-line leading-10 text-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+            จงโอบกอดโอกาสตรงหน้า <br /> เพราะมันคู่ควรกับ {name} ที่สุด
+          </h1>
+          <h1 className="text-[13px] lg:text-[15px] text-center text-white whitespace-pre-line leading-10 text-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
             ขอบคุณที่เดินทางมาด้วยกันนะ
           </h1>
-          <div className="flex justify-end">
-            <h1 className="text-[15px] text-center text-black font-bold">
+          <div className="flex justify-end w-full">
+            <h1 className="text-[13px] lg:text-[15px] text-center text-white text-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
               จาก..ที่ใดที่หนึ่ง
             </h1>
           </div>
-        </div>
-        <div className="flex gap-4 ignore-capture">
-          <IconButton color="primary" onClick={handleDownload}>
-            <DownloadIcon />
-          </IconButton>
-          <IconButton color="primary">
-            <ShareIcon onClick={handleShare} />
-          </IconButton>
+          <div className="flex gap-4 mt-1 lg:mt-5 ignore-capture">
+            <IconButton
+              sx={{ color: "#fff" }}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDownload();
+              }}
+            >
+              <DownloadIcon />
+            </IconButton>
+
+            <IconButton
+              sx={{ color: "#fff" }}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleShare();
+              }}
+            >
+              <ShareIcon />
+            </IconButton>
+          </div>
         </div>
       </div>
     </div>

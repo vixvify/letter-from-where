@@ -66,6 +66,12 @@ export default function RouteSoundManager() {
 
       return;
     }
+    if (pathname.startsWith("/scenes/scene_114") && AudioUrls["credit"]) {
+      play("ambient", AudioUrls["credit"], {
+        fadeIn: 4000,
+        loop: true,
+      });
+    }
   }, [pathname, enabled, play, stop]);
 
   return null;
