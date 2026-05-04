@@ -3,14 +3,6 @@ import { SceneUrls } from "./video-url";
 import { SceneText } from "@/core/constants/scene-text";
 
 export const VariantScenes: ScenesDataType = {
-  scene_4: {
-    src: SceneUrls.scene_4,
-    next: "scene_5",
-    text: SceneText.scene_4,
-    type: "common",
-    format: "image",
-    transition: "scene_5",
-  },
   scene_8: {
     src: SceneUrls.scene_8,
     next: "scene_9",
@@ -260,14 +252,6 @@ export const VariantScenes: ScenesDataType = {
     format: "image",
     transition: "scene_70",
     inputField: "scene_70",
-  },
-  scene_71: {
-    src: SceneUrls.scene_71,
-    next: "scene_72",
-    text: "",
-    type: "common",
-    format: "image",
-    transition: "scene_72",
   },
   scene_75: {
     src: SceneUrls.scene_75,

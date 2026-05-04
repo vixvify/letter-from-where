@@ -75,3 +75,16 @@ body {
     animation: fade-in 1s linear forwards;
   }
 }
+
+@keyframes creditScroll {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(-650vh);
+  }
+}
+
+.animate-credit {
+  animation: creditScroll 45s linear forwards;
+}

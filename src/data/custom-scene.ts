@@ -21,6 +21,14 @@ export const CustomScenes: ScenesDataType = {
     format: "image",
     transition: "black-fade",
   },
+  scene_4: {
+    src: SceneUrls.scene_4,
+    next: "scene_5",
+    text: SceneText.scene_4,
+    type: "custom4",
+    format: "image",
+    transition: "scene_5",
+  },
   scene_6: {
     next: "scene_7",
     type: "custom6",
@@ -118,6 +126,14 @@ export const CustomScenes: ScenesDataType = {
     format: "image",
     transition: "scene_70",
   },
+  scene_71: {
+    src: SceneUrls.scene_71,
+    next: "scene_76",
+    text: "",
+    type: "custom71",
+    format: "image",
+    transition: "scene_72",
+  },
   scene_79: {
     next: "scene_81",
     type: "custom79",
@@ -168,10 +184,10 @@ export const CustomScenes: ScenesDataType = {
     transition: "black-fade",
   },
   scene_101: {
-    next: null,
+    next: "scene_113",
     type: "custom101",
     format: "image",
-    transition: "black-fade",
+    transition: "scene_72",
   },
   scene_104: {
     next: "scene_105",
@@ -193,8 +209,20 @@ export const CustomScenes: ScenesDataType = {
     transition: "black-fade",
   },
   scene_112: {
-    next: null,
+    next: "scene_113",
     type: "custom112",
+    format: "image",
+    transition: "scene_72",
+  },
+  scene_113: {
+    next: "scene_114",
+    type: "custom113",
+    format: "image",
+    transition: "scene_72",
+  },
+  scene_114: {
+    next: null,
+    type: "custom114",
     format: "image",
     transition: "black-fade",
   },

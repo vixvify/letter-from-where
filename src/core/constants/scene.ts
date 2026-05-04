@@ -4,6 +4,7 @@ import { InputScene } from "@/components/scene/Input";
 import Custom1 from "@/components/scene/custom/group-1/Custom-1";
 import Custom2 from "@/components/scene/custom/group-1/Custom-2";
 import Custom3 from "@/components/scene/custom/group-1/Custom-3";
+import Custom4 from "@/components/scene/custom/group-1/Custom-4";
 import Custom6 from "@/components/scene/custom/group-1/Custom-6";
 import Custom14 from "@/components/scene/custom/group-1/Custom-14";
 import Custom17 from "@/components/scene/custom/group-2/Custom-17";
@@ -20,6 +21,7 @@ import Custom63 from "@/components/scene/custom/group-3/Custom-63";
 import Custom65 from "@/components/scene/custom/group-3/Custom-65";
 import Custom66 from "@/components/scene/custom/group-4/Custom-66";
 import Custom69 from "@/components/scene/custom/group-4/Custom-69";
+import Custom71 from "@/components/scene/custom/group-4/Custom-71";
 import Custom79 from "@/components/scene/custom/group-4/Custom-79";
 import Custom83 from "@/components/scene/custom/group-4/Custom-83";
 import Custom85 from "@/components/scene/custom/group-4/Custom-85";
@@ -33,10 +35,11 @@ import Custom112 from "@/components/scene/custom/group-6/Custom-112";
 import Custom104 from "@/components/scene/custom/group-6/Custom-104";
 import Custom110 from "@/components/scene/custom/group-6/Custom-110";
 import Custom111 from "@/components/scene/custom/group-6/Custom-111";
+import Custom113 from "@/components/scene/custom/group-6/Custom-113";
+import Custom114 from "@/components/scene/custom/group-6/Custom-114";
 import CommonOverlay from "@/components/overlay/Common";
 import ChoiceOverlay from "@/components/overlay/Choice";
 import InputOverlay from "@/components/overlay/Input";
-import { custom } from "zod";
 
 export const SceneComponentMap = {
   common: CommonScene,
@@ -45,6 +48,7 @@ export const SceneComponentMap = {
   custom1: Custom1,
   custom2: Custom2,
   custom3: Custom3,
+  custom4: Custom4,
   custom6: Custom6,
   custom14: Custom14,
   custom17: Custom17,
@@ -61,6 +65,7 @@ export const SceneComponentMap = {
   custom65: Custom65,
   custom66: Custom66,
   custom69: Custom69,
+  custom71: Custom71,
   custom79: Custom79,
   custom83: Custom83,
   custom85: Custom85,
@@ -74,6 +79,8 @@ export const SceneComponentMap = {
   custom110: Custom110,
   custom111: Custom111,
   custom112: Custom112,
+  custom113: Custom113,
+  custom114: Custom114,
 };
 
 export const SceneOverlayMap = {
@@ -83,6 +90,7 @@ export const SceneOverlayMap = {
 };
 
 export const CustomSceneWithImage = [
+  "scene_4",
   "scene_6",
   "scene_14",
   "scene_28",
@@ -93,7 +101,10 @@ export const CustomSceneWithImage = [
   "scene_63",
   "scene_65",
   "scene_66",
+  "scene_71",
   "scene_79",
   "scene_99",
   "scene_100",
+  "scene_113",
+  "scene_114",
 ];

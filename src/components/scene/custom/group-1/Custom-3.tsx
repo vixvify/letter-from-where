@@ -6,7 +6,7 @@ export default function Custom3({ scene, goTo }: SceneProps) {
   return (
     <div className="flex items-center justify-center w-full h-screen">
       <div className="text-center">
-        <div className="space-y-6 text-gray-800 leading-10 text-[12px] font-bold">
+        <div className="space-y-6 text-gray-800 leading-8 text-[13px] font-bold">
           <p className="m-0">คุณ...คุณคนนั้น</p>
 
           <p className="m-0">

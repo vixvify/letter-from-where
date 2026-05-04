@@ -2,6 +2,7 @@ export type CustomSceneKey =
   | "custom1"
   | "custom2"
   | "custom3"
+  | "custom4"
   | "custom6"
   | "custom14"
   | "custom17"
@@ -18,6 +19,7 @@ export type CustomSceneKey =
   | "custom65"
   | "custom66"
   | "custom69"
+  | "custom71"
   | "custom79"
   | "custom83"
   | "custom85"
@@ -30,4 +32,6 @@ export type CustomSceneKey =
   | "custom104"
   | "custom110"
   | "custom111"
-  | "custom112";
+  | "custom112"
+  | "custom113"
+  | "custom114";
